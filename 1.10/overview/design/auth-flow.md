@@ -33,7 +33,7 @@ HTTPS. Using a proxy to make this request is not currently supported.
 
 The shared secret used to sign the cluster-specific tokens with the HS256
 algorithm is generated during cluster boot and stored at
-`/var/lib/dcos/auth-token-secret` on each master node and in the
+`/var/lib/dcos/dcos-oauth/auth-token-secret` on each master node and in the
 `/dcos/auth-token-secret` znode in ZooKeeper.
 
 As noted above, to ease the setup process, DC/OS automatically adds the first
