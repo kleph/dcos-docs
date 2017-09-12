@@ -275,7 +275,7 @@ The following terms are contextually correct when talking about Apache Mesos, bu
 - [Resource Offer](#mesos-resource-offer)
 - [Containerizer](#mesos-containerizer)
   - [Universal Container Runtime](#mesos-containerizer-universal-container-runtime)
-  - [Docker Engine](#mesos--containerizer-docker-engine)
+  - [Docker Engine](#mesos-containerizer-docker-engine)
 - [Exhibitor &amp; ZooKeeper](#mesos-exhibitor-zookeeper)
 - [Mesos\-DNS](#mesos-dns)
 
