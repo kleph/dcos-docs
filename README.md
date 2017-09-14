@@ -1,7 +1,7 @@
 # DC/OS Documentation [![Build Status](https://jenkins.mesosphere.com/service/jenkins/buildStatus/icon?job=public-dcos-docs-master)](https://jenkins.mesosphere.com/service/jenkins/job/public-dcos-docs-master)
 Documentation for the Datacenter Operating System (DC/OS)
 
-**IMPORTANT: The docs team is in the process of merging all of our OSS and Enterprise content for _one big site_. Please do not merge anything to the `dcos-docs` repository until we give the OK? PRs are fine (and welcome!).**
+**IMPORTANT: The docs team is in the process of merging all of our OSS and Enterprise content for _one big site_. Please do not merge anything to the `dcos-docs` repository until we give the OK. PRs are fine (and welcome!).**
 
 And please let me know if you think of another channel to post this information.
 
