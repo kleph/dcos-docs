@@ -251,7 +251,7 @@ For more information, see the [Universe repository](https://github.com/mesospher
 
 A container registry is a repository of pre-built container images.
 
-The [Docker Runtime](#mesos-docker-runtime) and [Mesos Container Runtime](#mesos-universal-container-runtime) can both pull and run Docker images from public or private Docker container registries.
+The [Universal Container Runtime](#mesos-containerizer-universal-container-runtime) and [Docker Engine](#mesos-containerizer-docker-runtime) can both run Docker images from public or private Docker container registries.
 
 ### <a name="cloud-template"></a>Cloud Template
 
