@@ -38,7 +38,7 @@ Pods are configured via a JSON pod definition, which is similar to a Marathon [a
 # Environment variables
 Environment variables defined at the pod level are propagated to all pod containers. Pod-level environment variables are overridden by environment variables defined at the pod container level.
 
-Environment variables for ports are defined using the pod container endpoint names ( i.e ENDPOINT_<ENDPOINT_NAME>=<PORT>)
+Environment variables for ports are defined using the pod container endpoint names (i.e, ENDPOINT_<ENDPOINT_NAME>=<PORT>).
 
 Below are example environment variables reflecting the [multi-pod JSON pod definition example](/docs/1.10/deploying-services/pods/examples/#multi-pod).
 
