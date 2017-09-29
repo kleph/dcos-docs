@@ -1,5 +1,5 @@
 ---
-post_title: DC/OS Ports
+post_title: Required Ports
 menu_order: 5
 post_excerpt: ""
 feature_maturity: ""

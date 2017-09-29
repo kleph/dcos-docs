@@ -1,0 +1,60 @@
+Install
+- Development & Testing
+  - Local
+  - Cloud Templates
+    - AWS Cloud Formation Templates
+    - Azure Resource Manager Templates
+  - GUI Installer
+    - GUI Install Prerequisites
+  - CLI Installer
+    - CLI Install Prerequisites
+- Production
+  - Advanced Installer
+    - Install DC/OS on Bare-Metal
+      - Advanced Install Bare-Metal Prerequisites
+    - Install DC/OS on Virtual Machines
+      - Advanced Install VM Prerequisites
+  - Terraform
+    - Install DC/OS on DigitalOcean
+    - Install DC/OS on Packet
+  - Ansible
+    - Install DC/OS on GCE
+- Configuration Options
+
+
+Install
+- Local
+  - dcos-vagrant
+  - dcos-docker
+- Cloud
+  - AWS
+    - Cloud Formation Templates
+      - Basic
+      - Advanced
+    - GUI Installer
+    - CLI Installer
+    - Advanced Installer
+  - Azure
+    - Azure Resource Manager templates
+    - GUI Installer
+    - CLI Installer
+    - Advanced Installer
+  - DigitalOcean
+    - digitalocean-dcos-terraform
+    - GUI Installer
+    - CLI Installer
+    - Advanced Installer
+  - GCE
+    - dcos-gce ansible
+    - GUI Installer
+    - CLI Installer
+    - Advanced Installer
+  - Packet
+    - packet-terraform
+    - GUI Installer
+    - CLI Installer
+    - Advanced Installer
+- On-Premises
+  - GUI Installer
+  - CLI Installer
+  - Advanced Installer
