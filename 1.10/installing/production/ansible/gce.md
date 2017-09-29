@@ -280,7 +280,6 @@ Specify the concurrent downloads of the DC/OS installer to the cluster of master
 ### dcos_bootstrap_container
 Specify the name of the DC/OS bootstrap container running on the bootstrap node. Default: `dcosinstaller`.
 
+# Uninstall
 
-
-
-
+To remove DC/OS, you must completely reimage the operating system on your nodes. Uninstall will be supported in future releases. For more information, see [DCOS-250](https://dcosjira.atlassian.net/browse/DCOS-250) and [DCOS-192](https://dcosjira.atlassian.net/browse/DCOS-192).

@@ -120,3 +120,6 @@ Launch the DC/OS web interface by entering the Mesos master IP address:
 
   - We recommend against reducing the node count in production. Stateful DC/OS apps and services may suffer outages and failures if nodes are not put into maintenance mode, and their tasks rescheduled through their respective schedulers.
 
+# Uninstall
+
+To remove DC/OS, you must completely reimage the operating system on your nodes. Uninstall will be supported in future releases. For more information, see [DCOS-250](https://dcosjira.atlassian.net/browse/DCOS-250) and [DCOS-192](https://dcosjira.atlassian.net/browse/DCOS-192).

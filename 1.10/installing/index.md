@@ -8,7 +8,7 @@ DC/OS can be installed on any cluster of physical or virtual machines, on-premis
 
 To provide the best install experience possible, there are many different install methods tailored to specific environments.
 
-To decide which install method to use, select from the following table:
+The table below summarizes installation options.
 
 | Target Environment | Machine Type | Deployment Method | Quality | Documentation |
 |--------------------|--------------|-------------------|---------|---------------|

@@ -6,7 +6,7 @@ menu_order: 3
 
 You can create a DC/OS cluster on Packet bare metal using Terraform.
 
-The included Terraform templates are configured to run Mesosphere DC/OS on Packet. Depending on the DC/OS services that you install, or the amount of computing power your workload needs, you might have to modify the templates to suit your needs. You can modify the Terraform templates, but Mesosphere cannot assist in troubleshooting. If you require support, please email help@packet.net, visit the Packet IRC channel (#packethost on freenode) or consider [Enterprise DC/OS](https://mesosphere.com/).
+The included Terraform templates are configured to run Mesosphere DC/OS on Packet. Depending on the DC/OS services that you install, or the amount of computing power your workload needs, you might have to modify the templates to suit your needs. You can modify the Terraform templates, but Mesosphere cannot assist in troubleshooting. If you require support, please email help@packet.net, visit the Packet IRC channel (#packethost on freenode), or consider [Enterprise DC/OS](https://mesosphere.com/).
 
 **Important:** Upgrades are not supported with this installation method.
 
@@ -105,3 +105,7 @@ Launch the DC/OS web interface by entering the Mesos master IP address:
   - Increasing node count is fast, safe, and fun!
 
   - We recommend against reducing the node count in production. Stateful DC/OS apps and services may suffer outages and failures if nodes are not put into maintenance mode, and their tasks rescheduled through their respective schedulers.
+
+# Uninstall
+
+To remove DC/OS, you must completely reimage the operating system on your nodes. Uninstall will be supported in future releases. For more information, see [DCOS-250](https://dcosjira.atlassian.net/browse/DCOS-250) and [DCOS-192](https://dcosjira.atlassian.net/browse/DCOS-192).
