@@ -1,6 +1,6 @@
 ---
-post_title: Installing and Upgrading DC/OS
-nav_title: Installing and Upgrading
+post_title: Installing DC/OS
+nav_title: Installing
 menu_order: 030
 ---
 

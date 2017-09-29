@@ -1,5 +1,5 @@
 ---
-post_title: GUI DC/OS Installation Guide
+post_title: Install DC/OS using the GUI Installer
 nav_title: GUI
 menu_order: 100
 ---
@@ -147,8 +147,8 @@ The DC/OS installation creates these folders:
 
     ![postflight](/docs/1.10/img/ui-installer-post-flight.png)
 
-    **Tips:** 
-    
+    **Tips:**
+
     *  If you encounter errors such as `Time is marked as bad`, `adjtimex`, or `Time not in sync` during Post-Flight, verify that Network Time Protocol (NTP) is enabled on all nodes. For more information, see the [system requirements](/docs/1.10/installing/custom/system-requirements/#port-and-protocol).
     *  You can click **Download Logs** to view your logs locally.
     *  If this takes longer than about 10 minutes, you've probably misconfigured your cluster. Go checkout the [troubleshooting documentation][9].

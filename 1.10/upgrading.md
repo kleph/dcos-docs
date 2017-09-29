@@ -1,6 +1,7 @@
 ---
-post_title: Upgrading
-menu_order: 3.1
+post_title: Upgrading DC/OS
+nav_title: Upgrading
+menu_order: 031
 ---
 
 ## Summary
