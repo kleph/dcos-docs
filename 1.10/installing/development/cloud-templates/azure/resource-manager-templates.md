@@ -1,7 +1,7 @@
 ---
-post_title: Running DC/OS on Azure
+post_title: Installing DC/OS using Azure Resource Manager templates
 nav_title: Azure
-menu_order: 1
+menu_order: 20
 ---
 
 This topic explains how to install DC/OS using the Azure Resource Manager templates.

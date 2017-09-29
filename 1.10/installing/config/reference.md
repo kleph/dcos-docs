@@ -1,6 +1,7 @@
 ---
 post_title: Configuration Reference
-menu_order: 600
+nav_title: Reference
+menu_order: 10
 ---
 
 This topic provides all available configuration parameters. Except where explicitly indicated, the configuration parameters apply to both [DC/OS](https://dcos.io/) and [Enterprise DC/OS](https://mesosphere.com/product/).
@@ -431,8 +432,8 @@ A YAML nested list (`-`) of DNS resolvers for your DC/OS cluster nodes. You can 
 The <a href="https://rexray.readthedocs.io/en/v0.9.0/user-guide/config/" target="_blank">REX-Ray</a> configuration for enabling external persistent volumes in Marathon. REX-Ray is a storage orchestration engine. The following is an example configuration.
 
     rexray_config:
-        rexray: 
-          loglevel: info 
+        rexray:
+          loglevel: info
           service: ebs
         libstorage:
           integration:

@@ -1,5 +1,5 @@
 ---
-post_title: Running DC/OS on AWS EC2
+post_title: Running DC/OS on AWS using Cloud Formation templates
 nav_title: AWS
 menu_order: 0
 ---

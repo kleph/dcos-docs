@@ -1,6 +1,7 @@
 ---
-post_title: Examples
-menu_order: 700
+post_title: Configuration Examples
+nav_title: Examples
+menu_order: 20
 ---
 
 This topic provides common example configurations. Except where explicitly indicated, the configuration parameters apply to both [DC/OS](https://dcos.io/) and [Enterprise DC/OS](https://mesosphere.com/product/). These comments are used in this sample config.yaml to indicate DC/OS product type.
@@ -9,7 +10,7 @@ This topic provides common example configurations. Except where explicitly indic
 - `# Enterprise DC/OS Only` - Applies to Enterprise DC/OS only.
 
 # All parameters
-This sample config.yaml file includes all of the available configuration parameters for DC/OS. 
+This sample config.yaml file includes all of the available configuration parameters for DC/OS.
 
 ```yaml
 agent_list:
@@ -66,7 +67,7 @@ dcos_overlay_network:
     - name: <name>
       subnet: <address>
       prefix: <size>
-dns_search: <domain1 domain2 domain3>  
+dns_search: <domain1 domain2 domain3>
 docker_remove_delay: <num>hrs
 enable_docker_gc: `<true|false>`
 exhibitor_storage_backend: static
@@ -96,7 +97,7 @@ exhibitor_address: <loadbalancer-ip>
 master_dns_bindall: `<true|false>`
 num_master: <num-of-masters>
 # DC/OS only
-oauth_enabled: `<true|false>`  
+oauth_enabled: `<true|false>`
 public_agent_list:
 - <agent-private-ip>
 platform: <platform>
@@ -290,7 +291,7 @@ use_proxy: 'true'
 http_proxy: http://<user>:<pass>@<proxy_host>:<http_proxy_port>
 https_proxy: https://<user>:<pass>@<proxy_host>:<https_proxy_port>
 no_proxy:
-- 'foo.bar.com'    
+- 'foo.bar.com'
 - '.baz.com'
 ```
 
@@ -350,8 +351,8 @@ cosmos_config:
 ```
 
 ## <a name="custom-checks"></a>DC/OS cluster with one master, an Exhibitor/ZooKeeper managed internally, three private agents, Google DNS, and custom health checks defined for:
- 
-- A user Marathon instance (`user-marathon-on-marathon`) 
+
+- A user Marathon instance (`user-marathon-on-marathon`)
 - Local mounts on masters (`master-mounts`)
 - Local mounts on agents (`agent-mounts`)
 
