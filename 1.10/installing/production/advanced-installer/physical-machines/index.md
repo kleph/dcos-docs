@@ -8,47 +8,8 @@ With this installation method, you package the DC/OS distribution yourself and c
 
 The advanced installer requires:
 
-*   The bootstrap node must be network accessible from the cluster nodes.
+*   The bootstrap node must be network-accessible from the cluster nodes.
 *   The bootstrap node must have the HTTP(S) ports open from the cluster nodes.
-
-The DC/OS installation creates these folders:
-
-<table class="table">
-  <tr>
-    <th>Folder</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>/opt/mesosphere</code></td>
-    <td>Contains all the DC/OS binaries, libraries, cluster configuration. Do not modify.</td>
-  </tr>
-  <tr>
-    <td><code>/etc/systemd/system/dcos.target.wants</code></td>
-    <td>Contains the systemd services which start the things that make up systemd. They must live outside of `/opt/mesosphere` because of systemd constraints.</td>
-  </tr>
-  <tr>
-    <td><code>/etc/systemd/system/dcos.&lt;units&gt;</code></td>
-    <td>Contains copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.</td>
-  </tr>
-  <tr>
-    <td><code>/var/lib/dcos/exhibitor/zookeeper</code></td>
-    <td>Contains the [ZooKeeper](/docs/1.10/overview/concepts/#zookeeper) data.</td>
-  </tr>
-  <tr>
-    <td><code>/var/lib/docker</code></td>
-    <td>Contains the Docker data. </td>
-  </tr>
-  <tr>
-    <td><code>/var/lib/dcos</code></td>
-    <td>Contains the DC/OS and Mesos Master data.</td>
-  </tr>
-  <tr>
-    <td><code>/var/lib/mesos</code></td>
-    <td>Contains the Mesos Agent data.</td>
-  </tr>
-</table>
-
-**Important:** Changes to `/opt/mesosphere` are unsupported. They can lead to unpredictable behavior in DC/OS and prevent upgrades.
 
 ## Prerequisites
 Your cluster must meet the software and hardware [requirements](/docs/1.10/installing/custom/system-requirements/).
@@ -300,7 +261,7 @@ To install DC/OS:
 
     When the status icons are green, you can access the DC/OS web interface.
 
-1.  Launch the DC/OS web interface at: `http://<master-node-public-ip>/`. If this doesn't work, take a look at the [troubleshooting docs][9]
+1.  Launch the DC/OS web interface at: `http://<master-node-public-ip>/`. If this doesn't work, take a look at the [troubleshooting docs][9].
 
     ![DC/OS dashboard](/docs/1.10/img/dcos-gui.png)
 
