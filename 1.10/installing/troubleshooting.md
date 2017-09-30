@@ -1,5 +1,6 @@
 ---
 post_title: Troubleshooting Installation
+nav_title: Troubleshooting
 menu_order: 50
 ---
 

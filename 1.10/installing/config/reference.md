@@ -4,7 +4,7 @@ nav_title: Reference
 menu_order: 10
 ---
 
-This topic provides all available configuration parameters. Except where explicitly indicated, the configuration parameters apply to both [DC/OS](https://dcos.io/) and [Enterprise DC/OS](https://mesosphere.com/product/).
+This topic provides a list of all DC/OS configuration parameters. Except where explicitly indicated, the configuration parameters apply to both [DC/OS](https://dcos.io/) and [Enterprise DC/OS](https://mesosphere.com/product/).
 
 # Cluster Setup
 
