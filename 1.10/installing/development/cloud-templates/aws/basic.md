@@ -1,5 +1,5 @@
 ---
-post_title: Running DC/OS on AWS EC2 Basic
+post_title: Installing DC/OS on AWS using Basic Cloud Formation templates
 nav_title: AWS EC2 Basic
 menu_order: 0
 ---

@@ -24,8 +24,10 @@ DC/OS can be installed in the cloud using one of the following methods:
 
 ## GUI Installer
 
-The [GUI Installer](/docs/1.10/installing/development/gui-installer/) can be used to install DC/OS onto any existing physical or virtual machines, cloud or on-premises.
+Looking for a simple install wizard? Check out the
+
+The [GUI Installer](/docs/1.10/installing/development/gui-installer/) is a simple browser-based install wizard. It can be used to install DC/OS onto any existing physical or virtual machines, cloud or on-premises.
 
 ## CLI Installer
 
-The [CLI Installer](/docs/1.10/installing/development/cli-installer/) can be used to install DC/OS onto any existing physical or virtual machines, cloud or on-premises.
+The [CLI Installer](/docs/1.10/installing/development/cli-installer/) is an command-line installation tool that can be easily automated. It can be used to install DC/OS onto any existing physical or virtual machines, cloud or on-premises.

@@ -1,5 +1,5 @@
 ---
-post_title: Running DC/OS on AWS EC2 Advanced
+post_title: Installing DC/OS on AWS using Advanced Cloud Formation templates
 nav_title: AWS EC2 Advanced
 menu_order: 200
 ---
