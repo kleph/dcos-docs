@@ -3,14 +3,16 @@ post_title: Configuration
 menu_order: 30
 ---
 
-The DC/OS configuration parameters are specified in YAML format in a config.yaml file. This file is stored on your [bootstrap node](/docs/1.10/installing/custom/system-requirements/#bootstrap-node) and is used during DC/OS installation to generate a customized DC/OS build.
+Many [DC/OS installation methods](/docs/1.10/installing/) allow you to configure DC/OS using a YAML file (`config.yaml`). This file is generally provided to the installer during the first phase of DC/OS installation to generate customized immutable install artifacts.
 
-**Important:** If you want to modify the configuration file after installation, you must follow the [DC/OS upgrade process](/docs/1.10/installing/upgrading/).
+**Warning:** Some installation methods automate the generation of `config.yaml` which may make it harder or impossible to manually modify (ex: AWS Cloud Formation templates).
+
+**Important:** To modify the DC/OS configuration after installation, follow the [DC/OS upgrade process](/docs/1.10/installing/upgrading/) to upgrade to the same DC/OS version with a new `config.yaml`.
 
 # Format
 
 ## Key-value pairs
-The config.yaml file is formatted as a list of key-value pairs. For example:
+The `config.yaml` file is formatted as a list of key-value pairs. For example:
 
 ```yaml
 bootstrap_url: file:///opt/dcos_install_tmp
@@ -50,6 +52,8 @@ Some parameters are dependent on others. These dependent parameters are ignored 
 
 # Basic settings
 
+Most installations only need to set a few basic settings:
+
 | Parameter                              | Description                                                                                                                                               |
 |----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [agent_list](/docs/1.10/installing/custom/configuration/configuration-parameters/#agent_list)      | This parameter specifies a YAML nested list (`-`) of IPv4 addresses to your [private agent](/docs/1.10/overview/concepts/#private-agent-node) host names.                  |
@@ -68,6 +72,7 @@ Some parameters are dependent on others. These dependent parameters are ignored 
 | [use_proxy](/docs/1.10/installing/custom/configuration/configuration-parameters/#use_proxy)        | This parameter specifies whether to enable the DC/OS proxy.     |
 
 
-# Advanced settings
+# Further reading
 
-See the [configuration reference](/docs/1.10/installing/custom/configuration/configuration-parameters/) and [examples](/docs/1.10/installing/custom/configuration/examples/).
+- For a full list of configuration options, see the [Configuration Reference](/docs/1.10/installing/custom/configuration/configuration-parameters/).
+- For a list of example configurations, see [Configuration Examples](/docs/1.10/installing/custom/configuration/examples/).

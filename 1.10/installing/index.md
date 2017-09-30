@@ -10,18 +10,16 @@ To provide the best install experience possible, there are many different instal
 
 The table below summarizes installation options.
 
-| Target Environment | Machine Type | Deployment Method | Quality | Documentation |
+| Environment | Nodes | Installer | Support Level | Docs |
 |--------------------|--------------|-------------------|---------|---------------|
-| Any | Physical Machines | Advanced Installer | Production | [Documentation](/docs/1.10/installing/production/advanced-installer/physical-machines/) |
-| Any | Virtual Machines | Advanced Installer | Production | [Documentation](/docs/1.10/installing/production/advanced-installer/virtual-machines/) |
-| Amazon Cloud (AWS) | Virtual Machines | Basic Cloud Formation Templates | Dev & Test | [Documentation](/docs/1.10/installing/development/cloud-templates/aws/basic/) |
-| Amazon Cloud (AWS) | Virtual Machines | Advanced Cloud Formation Templates | Dev & Test | [Documentation](/docs/1.10/installing/development/cloud-templates/aws/advanced/) |
-| Amazon Cloud (AWS) | Virtual Machines | Advanced Installer | Production | [Documentation](/docs/1.10/installing/production/advanced-installer/virtual-machines/) |
-| Microsoft Azure Cloud | Virtual Machines | Azure Marketplace | Dev & Test | [Documentation](/docs/1.10/installing/development/cloud-templates/azure/marketplace/) |
-| Microsoft Azure Cloud | Virtual Machines | Azure Resource Manager Templates | Dev & Test | [Documentation](/docs/1.10/installing/development/cloud-templates/azure/resource-manager-templates/) |
-| Microsoft Azure Cloud | Virtual Machines | Advanced Installer | Production | [Documentation](/docs/1.10/installing/production/advanced-installer/virtual-machines/) |
-| Google Cloud (GCE) | Virtual Machines | Ansible | Dev, Test, & Prod | [Documentation](/docs/1.10/installing/production/ansible/gce/) |
-| Packet | Physical Machines | Ansible | Dev, Test, & Prod | [Documentation](/docs/1.10/installing/production/terraform/packet/) |
-| DigitalOcean | Virtual Machines | Terraform | Dev, Test, & Prod | [Documentation](/docs/1.10/installing/production/terraform/digitalocean/) |
-| Desktop or Laptop | Virtual Machines | DC/OS Vagrant | Dev & Test | [Documentation](/docs/1.10/installing/development/local/) |
-| Desktop or Laptop | Containers | DC/OS Docker | Dev & Test | [Documentation](/docs/1.10/installing/development/local/) |
+| Any | Physical | Advanced Installer | Production | [docs](/docs/1.10/installing/production/advanced-installer/physical-machines/) |
+| Any | Virtual | Advanced Installer | Production | [docs](/docs/1.10/installing/production/advanced-installer/virtual-machines/) |
+| AWS | Virtual | Cloud Formation | Dev/Test | [docs](/docs/1.10/installing/development/cloud-templates/aws/) |
+| AWS | Virtual | Advanced Installer | Production | [docs](/docs/1.10/installing/production/advanced-installer/virtual-machines/) |
+| Azure | Virtual | Azure Resource Manager | Dev/Test | [docs](/docs/1.10/installing/development/cloud-templates/azure/) |
+| Azure | Virtual | Advanced Installer | Production | [docs](/docs/1.10/installing/production/advanced-installer/virtual-machines/) |
+| GCE | Virtual | Ansible | Dev/Test/Prod | [docs](/docs/1.10/installing/production/ansible/gce/) |
+| Packet | Physical | Ansible | Dev/Test/Prod | [docs](/docs/1.10/installing/production/terraform/packet/) |
+| DigitalOcean | Virtual | Terraform | Dev/Test/Prod | [docs](/docs/1.10/installing/production/terraform/digitalocean/) |
+| Desktop/Laptop | Virtual | DC/OS Vagrant | Dev/Test | [docs](/docs/1.10/installing/development/local/) |
+| Desktop/Laptop | Containers | DC/OS Docker | Dev/Test | [docs](/docs/1.10/installing/development/local/) |

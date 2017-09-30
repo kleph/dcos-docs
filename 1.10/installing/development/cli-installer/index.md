@@ -8,7 +8,7 @@ The automated CLI installer provides a guided installation of DC/OS from the com
 
 This installation method uses a bootstrap node to administer the DC/OS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DC/OS installation.
 
-**Important:** Upgrades are not supported with this installation method.
+**Warning:** Upgrades are not supported with this installation method. For a list of methods that support upgrading, see [Install DC/OS for Production](/docs/1.10/installing/production/).
 
 The DC/OS installation creates these folders:
 

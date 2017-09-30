@@ -1,17 +1,17 @@
 ---
-post_title: Running DC/OS on AWS EC2 Advanced
+post_title: Installing DC/OS on AWS using Advanced Cloud Formation templates
 nav_title: AWS EC2 Advanced
 menu_order: 200
 ---
 
 The advanced AWS CloudFormation templates bring power and flexibility to creating and extending DC/OS clusters. With these templates you can choose from the complete set of DC/OS configuration options.
- 
- - Instantiate a complete DC/OS cluster on an existing VPC/Subnet combination.
- - Extend and update existing DC/OS clusters by adding more [agent](/docs/1.10/overview/concepts/#agent) nodes. 
- 
-The templates are used together in conjunction to create a DC/OS cluster. The templates are driven by parameters that AWS CloudFormation uses to create each stack.  
 
-**Important:** Upgrades are not supported with this installation method.
+ - Instantiate a complete DC/OS cluster on an existing VPC/Subnet combination.
+ - Extend and update existing DC/OS clusters by adding more [agent](/docs/1.10/overview/concepts/#agent) nodes.
+
+The templates are used together in conjunction to create a DC/OS cluster. The templates are driven by parameters that AWS CloudFormation uses to create each stack.
+
+**Warning:** Upgrades are not supported with this installation method. For a list of methods that support upgrading, see [Install DC/OS for Production](/docs/1.10/installing/production/).
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ An AWS EC2 <a href="https://aws.amazon.com/ec2/pricing/" target="_blank">m3.xlar
 * A node that meets the bootstrap node [system requirements](/docs/1.10/installing/custom/system-requirements/).
 * An AWS S3 bucket with read-write access.
     * The S3 bucket must have a bucket policy that allows the launched AWS instances to download the files from the S3 bucket. Here is a sample policy that allows anyone to download:
-    
+
       ```json
       {
         "Version":"2012-10-17",
@@ -44,12 +44,12 @@ An AWS EC2 <a href="https://aws.amazon.com/ec2/pricing/" target="_blank">m3.xlar
       }
       ```
       For more information about S3 bucket polices, see the [AWS Documentation](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html).
-      
+
 # Create your templates
 
 1.  Download the [dcos_generate_config.sh](https://dcos.io/releases/) to your bootstrap node.
 1.  Create a directory named `genconf` in the home directory of your node and navigate to it.
-    
+
     ```bash
     mkdir -p genconf
     ```
@@ -62,9 +62,9 @@ An AWS EC2 <a href="https://aws.amazon.com/ec2/pricing/" target="_blank">m3.xlar
     aws_template_storage_access_key_id: <your-access-key-id>
     aws_template_storage_secret_access_key: <your-secret-access_key>
     ```
-    
+
     For parameters descriptions and configuration examples, see the [documentation](/docs/1.10/installing/custom/configuration/configuration-parameters/).
-    
+
 1.  Run the DC/OS installer script with the AWS argument specified. This command creates and uploads a custom build of the DC/OS artifacts and templates to the specified S3 bucket.
 
     ```bash
@@ -72,16 +72,16 @@ An AWS EC2 <a href="https://aws.amazon.com/ec2/pricing/" target="_blank">m3.xlar
     ```
 
      The root URL for this bucket location is printed at the end of this step. You should see a message like this:
-    
+
     ```bash
     AWS CloudFormation templates now available at: https://<amazon-web-endpoint>/<path-to-directory>
     ```
 1.  Go to [S3](https://console.aws.amazon.com/s3/home) and navigate to your S3 bucket shown above in `<path-to-directory>`.
-    
-    1.  Select **cloudformation** and then select the zen template for the number of desired masters. For example, select **el7-zen-1.json** for a single master configuration. 
+
+    1.  Select **cloudformation** and then select the zen template for the number of desired masters. For example, select **el7-zen-1.json** for a single master configuration.
     1.  Right-click and select **Properties**, and then copy the AWS S3 template URL.
 1.  Go to [CloudFormation](https://console.aws.amazon.com/cloudformation/home) and click **Create Stack**.
-1.  On the **Select Template** page, specify the AWS S3 template URL path to your Zen template. For example, `https://s3-us-west-2.amazonaws.com/user-aws/templates/config_id/14222z9104081387447be59e178438749d154w3g/cloudformation/el7-zen-1.json`.      
+1.  On the **Select Template** page, specify the AWS S3 template URL path to your Zen template. For example, `https://s3-us-west-2.amazonaws.com/user-aws/templates/config_id/14222z9104081387447be59e178438749d154w3g/cloudformation/el7-zen-1.json`.
 
 ## Create your template dependencies
 
@@ -128,7 +128,7 @@ Use the `zen.sh` script to create the Zen template dependencies. These dependenc
     echo "Public SubnetId: $public_subnet"
     ```
 
-1.  Run the `zen.sh` script with an optional tag value for your DC/OS stack specified (`STACK_NAME`), or use the default `dcos`. This value will be used to tag your DC/OS cluster in AWS.  
+1.  Run the `zen.sh` script with an optional tag value for your DC/OS stack specified (`STACK_NAME`), or use the default `dcos`. This value will be used to tag your DC/OS cluster in AWS.
 
     ```bash
     bash ./zen.sh <STACK_NAME>
