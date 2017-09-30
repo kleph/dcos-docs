@@ -1,6 +1,6 @@
 ---
 post_title: Install DC/OS using the GUI Installer
-nav_title: GUI
+nav_title: GUI Installer
 menu_order: 100
 ---
 
@@ -8,7 +8,7 @@ The automated GUI installer provides a simple graphical interface that guides yo
 
 This installation method uses a bootstrap node to administer the DC/OS installation across your cluster. The bootstrap node uses an SSH key to connect to each node in your cluster to automate the DC/OS installation.
 
-**Important:** Upgrades are not supported with this installation method.
+**Warning:** Upgrades are not supported with this installation method. For a list of methods that support upgrading, see [Install DC/OS for Production](/docs/1.10/installing/production/).
 
 The DC/OS installation creates these folders:
 
