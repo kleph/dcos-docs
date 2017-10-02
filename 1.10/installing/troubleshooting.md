@@ -1,7 +1,7 @@
 ---
 post_title: Troubleshooting Installation
 nav_title: Troubleshooting
-menu_order: 50
+menu_order: 90
 ---
 
 # <a name="general"></a>General troubleshooting approach
@@ -10,17 +10,17 @@ menu_order: 50
 
     ## <a name="ip-detect-script"></a>IP detect script
 
-    You must have a valid [ip-detect](/docs/1.10/installing/custom/advanced/) script. You can manually run `ip-detect` on all the nodes in your cluster or check `/opt/mesosphere/bin/detect_ip` on an existing installation to ensure that it returns a valid IP address. A valid IP address does not have:
+    You must have a valid [ip-detect](/docs/1.10/installing/advanced-installer/) script. You can manually run `ip-detect` on all the nodes in your cluster or check `/opt/mesosphere/bin/detect_ip` on an existing installation to ensure that it returns a valid IP address. A valid IP address does not have:
 
     - extra lines
     - white space
     - special or hidden characters
 
-    It is recommended that you use the `ip-detect` [examples](/docs/1.10/installing/custom/advanced/).
+    It is recommended that you use the `ip-detect` [examples](/docs/1.10/installing/advanced-installer/).
 
     ## DNS resolvers
 
-    You must have working DNS resolvers, specified in your [config.yaml](/docs/1.10/installing/custom/configuration/configuration-parameters/#resolvers) file. It is recommended that you have forward and reverse lookups for FQDNs, short hostnames, and IP addresses. It is possible for DC/OS to function in environments without valid DNS support, but the following _must_ work to support DC/OS services, including Spark:
+    You must have working DNS resolvers, specified in your [config.yaml](/docs/1.10/installing/advanced-installer/config/reference/#resolvers) file. It is recommended that you have forward and reverse lookups for FQDNs, short hostnames, and IP addresses. It is possible for DC/OS to function in environments without valid DNS support, but the following _must_ work to support DC/OS services, including Spark:
 
     - `hostname -f` returns the FQDN
     - `hostname -s` returns the short hostname
@@ -323,11 +323,11 @@ DC/OS uses ZooKeeper, a high-performance coordination service to manage the inst
     ```
 
 
- [1]: /docs/1.10/installing/custom/configuration/configuration-parameters/#scrollNav-5
+ [1]: /docs/1.10/installing/config/reference/#scrollNav-5
  [2]: https://open.mesosphere.com/reference/mesos-master/
- [3]: /docs/1.10/installing/custom/configuration/configuration-parameters/#scrollNav-7
+ [3]: /docs/1.10/installing/config/reference/#scrollNav-7
  [4]: /docs/1.10/overview/architecture/#boot
- [5]: /docs/1.10/installing/custom/configuration/configuration-parameters/
+ [5]: /docs/1.10/installing/config/reference/
  [6]: /docs/1.10/administering-clusters/sshcluster/
  [7]: /docs/1.10/gui/
 

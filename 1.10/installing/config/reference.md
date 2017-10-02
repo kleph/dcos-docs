@@ -151,7 +151,7 @@ You can use the following options to further configure the Docker credentials:
     *  `cluster_docker_credentials_enabled: 'true'` Pass the Mesos `--docker_config` option to Mesos. It will point to a file that contains the provided `cluster_docker_credentials` data.
     *  `cluster_docker_credentials_enabled: 'false'` Do not pass the Mesos `--docker_config` option to Mesos.
 
-For more information, see the [examples](/docs/1.10/installing/custom/configuration/examples/#docker-credentials).
+For more information, see the [examples](/docs/1.10/installing/config/examples/#docker-credentials).
 
 ### cluster_docker_registry_url
 The custom URL that Mesos uses to pull Docker images from. If set, it will configure the Mesos' `--docker_registry` flag to the specified URL. This changes the default URL Mesos uses for pulling Docker images. By default `https://registry-1.docker.io` is used.
@@ -197,7 +197,7 @@ Custom installation checks that are added to the default check configuration pro
     - `cmd` - Specify an array of health check command strings.
     - `timeout` - Specify how long to wait, in seconds, before assuming the check failed. A check that times out is assumed to have a status of `3 (UNKNOWN)`.
 
-For more information on how these custom checks are used, see the [examples](/docs/1.10/installing/custom/configuration/examples/#custom-checks) and [Node and Cluster Health Check](/docs/1.10/installing/custom/node-cluster-health-check/) documentation.
+For more information on how these custom checks are used, see the [examples](/docs/1.10/installing/config/examples/#custom-checks) and [Node and Cluster Health Check](/docs/1.10/administering-clusters/node-cluster-health-check/) documentation.
 
 ### dcos_audit_logging (Enterprise DC/OS Only)
 
@@ -212,7 +212,7 @@ For more information, see the [security documentation](https://docs.mesosphere.c
 
 Indicates whether to enable DC/OS virtual networks.
 
-**Important:** Virtual networks require Docker version 1.11 or later. If you are using Docker 1.10 or earlier, you must specify `dcos_overlay_enable: 'false'`. For more information, see the [system requirements](/docs/1.10/installing/custom/system-requirements/).
+**Important:** Virtual networks require Docker version 1.11 or later. If you are using Docker 1.10 or earlier, you must specify `dcos_overlay_enable: 'false'`. For more information, see the [install prerequisites](/docs/1.10/installing/advanced-installer/prerequisites/).
 
 *  `dcos_overlay_enable: 'false'` Do not enable the DC/OS virtual network.
 *  `dcos_overlay_enable: 'true'` Enable the DC/OS virtual network. This is the default value. After the virtual network is enabled, you can also specify the following parameters:
@@ -242,7 +242,7 @@ Indicates whether to enable DC/OS virtual networks.
             *  `subnet` The subnet that is allocated to the virtual network.
             *  `prefix` The size of the subnet that is allocated to each agent and thus defines the number of agents on which the overlay can run. The size of the subnet is carved from the overlay subnet.
 
- For more information, see the [example](/docs/1.10/installing/custom/configuration/examples/#overlay) and [documentation](/docs/1.10/networking/virtual-networks/).
+ For more information, see the [example](/docs/1.10/installing/config/examples/#overlay) and [documentation](/docs/1.10/networking/virtual-networks/).
 
 
 ### dns_bind_ip_blacklist
@@ -286,8 +286,8 @@ The amount of time to wait before removing stale Docker images stored on the age
 ### enable_docker_gc
 Indicates whether to run the [docker-gc](https://github.com/spotify/docker-gc#excluding-images-from-garbage-collection) script, a simple Docker container and image garbage collection script, once every hour to clean up stray Docker containers. You can configure the runtime behavior by using the `/etc/` config. For more information, see the [documentation](https://github.com/spotify/docker-gc#excluding-images-from-garbage-collection)
 
-*  `enable_docker_gc: 'true'` Run the docker-gc scripts once every hour. This is the default value for [cloud](/docs/1.10/installing/cloud/) template installations.
-*  `enable_docker_gc: 'false'` Do not run the docker-gc scripts once every hour. This is the default value for [custom](/docs/1.10/installing/custom/) installations.
+*  `enable_docker_gc: 'true'` Run the docker-gc scripts once every hour. This is the default value in the AWS and Azure cloud templates.
+*  `enable_docker_gc: 'false'` Do not run the docker-gc scripts once every hour. This is the default value for the CLI, GUI and Advanced installers.
 
 ### exhibitor_storage_backend
 The type of storage backend to use for Exhibitor. You can use internal DC/OS storage (`static`) or specify an external storage system (`zookeeper`, `aws_s3`, and `azure`) for configuring and orchestrating ZooKeeper with Exhibitor on the master nodes. Exhibitor automatically configures your ZooKeeper installation on the master nodes during your DC/OS installation.
@@ -499,6 +499,6 @@ Indicates whether to enable the DC/OS proxy.
 
         **Important:** Wildcard characters (`*`) are not supported.
 
-For more information, see the [examples](/docs/1.10/installing/custom/configuration/examples/#http-proxy).
+For more information, see the [examples](/docs/1.10/installing/config/examples/#http-proxy).
 
 **Important:** You should also configure an HTTP proxy for [Docker](https://docs.docker.com/engine/admin/systemd/#/http-proxy).

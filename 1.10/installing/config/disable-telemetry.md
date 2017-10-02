@@ -11,7 +11,7 @@ To disable telemetry reporting, add this parameter to your install configuration
 telemetry_enabled: 'false'
 ```
 
-Alternatively, a flag can be passed to the [CLI Installer](/docs/1.10/installing/development/cli-installer/) or [Advanced Installer](/docs/1.10/installing/production/advanced-installer/):
+Alternatively, a flag can be passed to the [CLI Installer](/docs/1.10/installing/cli-installer/) or [Advanced Installer](/docs/1.10/installing/advanced-installer/):
 
 ```
 dcos_generate_config.sh --cli-telemetry-disabled
