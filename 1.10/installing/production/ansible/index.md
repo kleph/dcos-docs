@@ -4,7 +4,7 @@ nav_title: Ansible
 menu_order: 10
 ---
 
-One way to install DC/OS for production is to automate the [Advanced Installer](/docs/1.10/installing/production/advanced-installer/) with [Ansible](https://www.ansible.com/).
+One way to install DC/OS is to automate the [Advanced Installer](/docs/1.10/installing/production/advanced-installer/) with [Ansible](https://www.ansible.com/).
 
 Here are a few Ansible playbooks to get you started:
 

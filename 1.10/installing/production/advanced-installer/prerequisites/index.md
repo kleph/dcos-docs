@@ -1,6 +1,6 @@
 ---
 post_title: System Requirements
-menu_order: 000
+menu_order: 0
 ---
 
 # Hardware Prerequisites
