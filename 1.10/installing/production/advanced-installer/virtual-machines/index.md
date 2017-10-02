@@ -8,50 +8,11 @@ With this installation method, you package the DC/OS distribution yourself and c
 
 The advanced installer requires:
 
-*   The bootstrap node must be network accessible from the cluster nodes.
-*   The bootstrap node must have the HTTP(S) ports open from the cluster nodes.
-
-The DC/OS installation creates these folders:
-
-<table class="table">
-  <tr>
-    <th>Folder</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>/opt/mesosphere</code></td>
-    <td>Contains all the DC/OS binaries, libraries, cluster configuration. Do not modify.</td>
-  </tr>
-  <tr>
-    <td><code>/etc/systemd/system/dcos.target.wants</code></td>
-    <td>Contains the systemd services which start the things that make up systemd. They must live outside of `/opt/mesosphere` because of systemd constraints.</td>
-  </tr>
-  <tr>
-    <td><code>/etc/systemd/system/dcos.&lt;units&gt;</code></td>
-    <td>Contains copies of the units in `/etc/systemd/system/dcos.target.wants`. They must be at the top folder as well as inside `dcos.target.wants`.</td>
-  </tr>
-  <tr>
-    <td><code>/var/lib/dcos/exhibitor/zookeeper</code></td>
-    <td>Contains the [ZooKeeper](/docs/1.10/overview/concepts/#zookeeper) data.</td>
-  </tr>
-  <tr>
-    <td><code>/var/lib/docker</code></td>
-    <td>Contains the Docker data. </td>
-  </tr>
-  <tr>
-    <td><code>/var/lib/dcos</code></td>
-    <td>Contains the DC/OS and Mesos Master data.</td>
-  </tr>
-  <tr>
-    <td><code>/var/lib/mesos</code></td>
-    <td>Contains the Mesos Agent data.</td>
-  </tr>
-</table>
-
-**Important:** Changes to `/opt/mesosphere` are unsupported. They can lead to unpredictable behavior in DC/OS and prevent upgrades.
+*   The bootstrap node to be network-accessible from the cluster nodes.
+*   The bootstrap node to have the HTTP(S) ports open from the cluster nodes.
 
 ## Prerequisites
-Your cluster must meet the software and hardware [requirements](/docs/1.10/installing/custom/system-requirements/).
+Your cluster must meet the software and hardware [requirements](/docs/1.10/installing/production/virtual-machines/prerequisite/).
 
 # Configure your cluster
 
@@ -199,21 +160,21 @@ In this step you create a custom DC/OS build file on your bootstrap node and the
 
 To install DC/OS:
 
-1.  Download the [DC/OS installer][4].
+1. Download the [DC/OS installer][4].
 
     ```bash
     curl -O https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh
     ```
 
-1.  From the bootstrap node, run the DC/OS installer shell script to generate a customized DC/OS build file. The setup script extracts a Docker container that uses the generic DC/OS install files to create customized DC/OS build files for your cluster. The build files are output to `./genconf/serve/`.
+1. From the bootstrap node, run the DC/OS installer shell script to generate a customized DC/OS build file. The setup script extracts a Docker container that uses the generic DC/OS install files to create customized DC/OS build files for your cluster. The build files are output to `./genconf/serve/`.
 
-    **Tip:** You can view all of the automated command line installer options with the `dcos_generate_config.sh --help` flag.
+  **Tip:** You can view all of the automated command line installer options with the `dcos_generate_config.sh --help` flag.
 
-    ```bash
-    sudo bash dcos_generate_config.sh
-    ```
+  ```bash
+  sudo bash dcos_generate_config.sh
+  ```
 
-    At this point your directory structure should resemble:
+  At this point your directory structure should resemble:
 
         ├── dcos-genconf.<HASH>.tar
         ├── dcos_generate_config.sh
@@ -294,7 +255,7 @@ To install DC/OS:
 
 1.  Monitor Exhibitor and wait for it to converge at `http://<master-ip>:8181/exhibitor/v1/ui/index.html`.
 
-    __Tip:__ If you encounter errors such as `Time is marked as bad`, `adjtimex`, or `Time not in sync` in journald, verify that Network Time Protocol (NTP) is enabled on all nodes. For more information, see the [system requirements](/docs/1.10/installing/custom/system-requirements/#port-and-protocol).
+    __Tip:__ If you encounter errors such as `Time is marked as bad`, `adjtimex`, or `Time not in sync` in journald, verify that Network Time Protocol (NTP) is enabled on all nodes. For more information, see the [system requirements](/docs/1.10/installing/production/virtual-machines/prerequisites/#port-and-protocol).
 
     ![alt text](/docs/1.10/img/chef-zk-status.png)
 
@@ -304,18 +265,19 @@ To install DC/OS:
 
     ![DC/OS dashboard](/docs/1.10/img/dcos-gui.png)
 
+# Uninstall DC/OS
+To remove DC/OS, you must completely reimage the operating system on your nodes. Uninstall will be supported in future releases. For more information, see [DCOS-250](https://dcosjira.atlassian.net/browse/DCOS-250) and [DCOS-192](https://dcosjira.atlassian.net/browse/DCOS-192).
+
 ### Next Steps
 
 - [Add users to your cluster][10]
 - [Install the DC/OS Command-Line Interface (CLI)][2]
 - [Troubleshooting DC/OS installation][9]
-- [Uninstalling DC/OS][8]
 
 [1]: /docs/1.10/installing/custom/configuration/configuration-parameters/
 [2]: /docs/1.10/cli/install/
 [4]: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh
 [6]: /docs/1.10/overview/concepts/#public-agent-node
 [7]: /docs/1.10/overview/concepts/#private
-[8]: /docs/1.10/installing/custom/uninstall/
 [9]: /docs/1.10/installing/troubleshooting/
 [10]: /docs/1.10/security/user-management/

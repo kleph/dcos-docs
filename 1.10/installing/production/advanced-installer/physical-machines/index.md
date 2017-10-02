@@ -265,18 +265,19 @@ To install DC/OS:
 
     ![DC/OS dashboard](/docs/1.10/img/dcos-gui.png)
 
+# Uninstall DC/OS
+To remove DC/OS, you must completely reimage the operating system on your nodes. Uninstall will be supported in future releases. For more information, see [DCOS-250](https://dcosjira.atlassian.net/browse/DCOS-250) and [DCOS-192](https://dcosjira.atlassian.net/browse/DCOS-192).
+
 ### Next Steps
 
 - [Add users to your cluster][10]
 - [Install the DC/OS Command-Line Interface (CLI)][2]
 - [Troubleshooting DC/OS installation][9]
-- [Uninstalling DC/OS][8]
 
 [1]: /docs/1.10/installing/custom/configuration/configuration-parameters/
 [2]: /docs/1.10/cli/install/
 [4]: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh
 [6]: /docs/1.10/overview/concepts/#public-agent-node
 [7]: /docs/1.10/overview/concepts/#private
-[8]: /docs/1.10/installing/custom/uninstall/
 [9]: /docs/1.10/installing/troubleshooting/
 [10]: /docs/1.10/security/user-management/

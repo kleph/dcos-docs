@@ -35,7 +35,7 @@ Here are the master node hardware requirements.
 | Memory      | 32 GB RAM | 32 GB RAM   |
 | Hard disk   | 120 GB    | 120 GB      |
 
-There are many mixed workloads on the masters, for example Mesos replicated log and ZooKeeper. Some of these require fsync()ing every so often, and this can generate a lot of very expensive random I/O. We recommend the following: 
+There are many mixed workloads on the masters, for example Mesos replicated log and ZooKeeper. Some of these require fsync()ing every so often, and this can generate a lot of very expensive random I/O. We recommend the following:
 
 - Solid-state drive (SSD)
 - RAID controllers with a BBU
@@ -54,7 +54,7 @@ Here are the agent node hardware requirements.
 | Memory      | 16 GB RAM | 16 GB RAM   |
 | Hard disk   | 60 GB     | 60 GB       |
 
-The agent nodes must also have: 
+The agent nodes must also have:
 
 - A `/var` directory with 10 GB or more of free space. This directory is used by the sandbox for both [Docker and DC/OS Universal container runtime](/docs/1.10/deploying-services/containerizers/).
 - Network Access to a public Docker repository or to an internal Docker registry.
@@ -66,10 +66,10 @@ The agent nodes must also have:
     ```
 *   DC/OS is installed to `/opt/mesosphere`. `/opt/mesosphere` cannot be on a partition that is on an LVM logical volume or shared storage.
 *   The Mesos master and agent persistent information of the cluster is stored in the `/var/lib/mesos` directory.
-    
+
     **Important:** Do not remotely mount `/var/lib/mesos` or the Docker storage directory (by default `/var/lib/docker`).
-    
-*   Do not mount `/tmp` with `noexec`. This will prevent Exhibitor and ZooKeeper from running.    
+
+*   Do not mount `/tmp` with `noexec`. This will prevent Exhibitor and ZooKeeper from running.
 
 ### Port and Protocol Configuration
 
@@ -88,26 +88,6 @@ High speed internet access is recommended for DC/OS installation. A minimum 10 M
 **Tip:** Refer to [this shell script](https://raw.githubusercontent.com/dcos/dcos/1.10/cloud_images/centos7/install_prereqs.sh) for an example of how to install the software requirements for DC/OS masters and agents on a CentOS 7 host.
 
 ## All Nodes
-
-### Docker
-
-Docker must be installed on all bootstrap and cluster nodes. The supported versions of Docker are:
-
-- 1.13.x
-- 1.12.x
-- 1.11.x
-
-**Recommendations**
-
-* Docker 1.11.x - 1.13.x is recommended <a href="https://github.com/docker/docker/issues/9718" target="_blank">for stability reasons</a>.
-
-* Do not use Docker `devicemapper` storage driver in `loop-lvm` mode. For more information, see [Docker and the Device Mapper storage driver](https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/).
-
-* Prefer `OverlayFS` or `devicemapper` in `direct-lvm` mode when choosing a production storage driver. For more information, see Docker's <a href="https://docs.docker.com/engine/userguide/storagedriver/selectadriver/" target="_blank">Select a Storage Driver</a>.
-
-* Manage Docker on CentOS with systemd. systemd handles starting Docker on boot and restarting it when it crashes.
-
-* Run Docker commands as the root user (with `sudo`) or as a user in the <a href="https://docs.docker.com/engine/installation/linux/centos/#create-a-docker-group" target="_blank">docker user group</a>.
 
 **Distribution-Specific Installation**
 
@@ -145,7 +125,7 @@ timedatectl
 
 Before installing DC/OS, you must ensure that your bootstrap node has the following prerequisites.
 
-**Important:** 
+**Important:**
 
 * If you specify `exhibitor_storage_backend: zookeeper`, the bootstrap node is a permanent part of your cluster. With `exhibitor_storage_backend: zookeeper` the leader state and leader election of your Mesos masters is maintained in Exhibitor ZooKeeper on the bootstrap node. For more information, see the configuration parameter [documentation](/docs/1.10/installing/custom/configuration/configuration-parameters/).
 * The bootstrap node must be separate from your cluster nodes.
@@ -153,6 +133,26 @@ Before installing DC/OS, you must ensure that your bootstrap node has the follow
 ### DC/OS setup file
 
 Download and save the [DC/OS setup file][3] to your bootstrap node. This file is used to create your customized DC/OS build file.
+
+### Docker
+
+Docker must be installed on all bootstrap and cluster nodes. The supported versions of Docker are:
+
+- 1.13.x
+- 1.12.x
+- 1.11.x
+
+**Recommendations**
+
+* Docker 1.11.x - 1.13.x is recommended <a href="https://github.com/docker/docker/issues/9718" target="_blank">for stability reasons</a>.
+
+* Do not use Docker `devicemapper` storage driver in `loop-lvm` mode. For more information, see [Docker and the Device Mapper storage driver](https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/).
+
+* Prefer `OverlayFS` or `devicemapper` in `direct-lvm` mode when choosing a production storage driver. For more information, see Docker's <a href="https://docs.docker.com/engine/userguide/storagedriver/selectadriver/" target="_blank">Select a Storage Driver</a>.
+
+* Manage Docker on CentOS with systemd. systemd handles starting Docker on boot and restarting it when it crashes.
+
+* Run Docker commands as the root user (with `sudo`) or as a user in the <a href="https://docs.docker.com/engine/installation/linux/centos/#create-a-docker-group" target="_blank">docker user group</a>.
 
 ### Docker NGINX (advanced installer)
 
@@ -195,7 +195,7 @@ On each of your cluster nodes, use the following command to:
     **Tip:** It may take a few minutes for your node to come back online after reboot.
 
 ### Locale requirements
-You must set the `LC_ALL` and `LANG` environment variables to `en_US.utf-8`.  
+You must set the `LC_ALL` and `LANG` environment variables to `en_US.utf-8`.
 
 # Next steps
 
