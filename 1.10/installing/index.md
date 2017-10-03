@@ -44,7 +44,7 @@ To provide the best install experience possible, there are many different instal
 | Workstation | Virtual | Vagrant | [dcos-vagrant](https://github.com/dcos/dcos-vagrant) | Dev/Test | [docs](/docs/1.10/installing/local/) |
 | Laptop | Containers | Docker | [dcos-docker](https://github.com/dcos/dcos-docker) | Dev/Test | [docs](/docs/1.10/installing/local/) |
 
-# Installer attributes
+# Install method attributes
 
 - **Environment** - DC/OS can be installed on any cloud: hosted or on-premises.
 - **Node Type** - DC/OS can be installed on virtual machines, physical machines, or even a cluster of containers.
