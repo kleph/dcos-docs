@@ -210,7 +210,8 @@ This issue may be <a href="https://github.com/moby/moby/pull/25592" target="_bla
 Stop and disable firewalld with the following command:
 
 ```bash
-sudo systemctl stop firewalld && sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
 ```
 
 Alternatively, firewalld must be configured to support the [Networking requirements](#networking-requirements).
