@@ -12,7 +12,7 @@ The advanced installer requires:
 *   The bootstrap node must have the HTTP(S) ports open from the cluster nodes.
 
 ## Prerequisites
-Your cluster must meet the software and hardware [requirements](/docs/1.10/installing/advanced-installer/prerequisites/).
+Your cluster must meet the [system requirements](/docs/1.10/installing/advanced-installer/system-requirements/).
 
 # Configure your cluster
 
@@ -255,7 +255,7 @@ To install DC/OS:
 
 1.  Monitor Exhibitor and wait for it to converge at `http://<master-ip>:8181/exhibitor/v1/ui/index.html`.
 
-    __Tip:__ If you encounter errors such as `Time is marked as bad`, `adjtimex`, or `Time not in sync` in journald, verify that Network Time Protocol (NTP) is enabled on all nodes. For more information, see the [system requirements](/docs/1.10/installing/advanced-installer/prerequisites/#port-and-protocol).
+    __Tip:__ If you encounter errors such as `Time is marked as bad`, `adjtimex`, or `Time not in sync` in journald, verify that Network Time Protocol (NTP) is enabled on all nodes. For more information, see the [system requirements](/docs/1.10/installing/advanced-installer/system-requirements/#port-and-protocol).
 
     ![alt text](/docs/1.10/img/chef-zk-status.png)
 

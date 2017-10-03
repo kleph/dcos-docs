@@ -149,7 +149,7 @@ The DC/OS installation creates these folders:
 
     **Tips:**
 
-    *  If you encounter errors such as `Time is marked as bad`, `adjtimex`, or `Time not in sync` during Post-Flight, verify that Network Time Protocol (NTP) is enabled on all nodes. For more information, see the [system requirements](/docs/1.10/installing/gui-installer/prerequisites/#port-and-protocol).
+    *  If you encounter errors such as `Time is marked as bad`, `adjtimex`, or `Time not in sync` during Post-Flight, verify that Network Time Protocol (NTP) is enabled on all nodes. For more information, see the [system requirements](/docs/1.10/installing/gui-installer/system-requirements/#port-and-protocol).
     *  You can click **Download Logs** to view your logs locally.
     *  If this takes longer than about 10 minutes, you've probably misconfigured your cluster. Go checkout the [troubleshooting documentation][9].
 
@@ -188,7 +188,7 @@ It is recommended that you save your DC/OS installer file immediately after inst
 
 [1]: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh
 [2]: /docs/1.10/networking/
-[3]: /docs/1.10/installing/gui-installer/prerequisites/
+[3]: /docs/1.10/installing/gui-installer/system-requirements/
 [4]: /docs/1.10/administering-clusters/convert-agent-type/
 [5]: /docs/1.10/cli/install/
 [9]: /docs/1.10/installing/troubleshooting/

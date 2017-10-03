@@ -50,7 +50,7 @@ The DC/OS installation creates these folders:
 **Important:** Changes to `/opt/mesosphere` are unsupported. They can lead to unpredictable behavior in DC/OS and prevent upgrades.
 
 ## Prerequisites
-Your cluster must meet the software and hardware [requirements](/docs/1.10/installing/advanced-installer/prerequisites/).
+Your cluster must meet the [system requirements](/docs/1.10/installing/advanced-installer/system-requirements/).
 
 # Configure your cluster
 
@@ -239,7 +239,7 @@ To install DC/OS:
     │   ├── state
     ```
 
-2.  <a name="two"></a>Install the cluster prerequisites, including system updates, compression utilities (UnZip, GNU tar, and XZ Utils), and cluster permissions. For a full list of cluster prerequisites, see this [documentation][4].
+2.  <a name="two"></a>Install the software prerequisites, including system updates, compression utilities (UnZip, GNU tar, and XZ Utils), and cluster permissions. For more information, see the full [system requirements][4].
 
     ```bash
     sudo bash dcos_generate_config.sh --install-prereqs
@@ -329,7 +329,7 @@ To install DC/OS:
 
 6.  Monitor Exhibitor and wait for it to converge at `http://<master-public-ip>:8181/exhibitor/v1/ui/index.html`.
 
-    __Tip:__ If you encounter errors such as `Time is marked as bad`, `adjtimex`, or `Time not in sync` during Post-Flight, verify that Network Time Protocol (NTP) is enabled on all nodes. For more information, see the [prerequisites](/docs/1.10/installing/cli-installer/prerequisites/#port-and-protocol).
+    __Tip:__ If you encounter errors such as `Time is marked as bad`, `adjtimex`, or `Time not in sync` during Post-Flight, verify that Network Time Protocol (NTP) is enabled on all nodes. For more information, see the [system requirements](/docs/1.10/installing/cli-installer/system-requirements/#port-and-protocol).
 
     ![alt text](/docs/1.10/img/chef-zk-status.png)
 
@@ -374,10 +374,10 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
 
 **Prerequisite:**
 
-*   The agent nodes must meet the hardware and software prerequisites.
+*   The agent nodes must meet the [system requirements][4].
 
 1.  Update the `config.yaml` file with the additional agent nodes. For parameters descriptions and configuration examples, see the [documentation][2].
-2.  Run the installation steps beginning with [installing the cluster][4] prerequisites:
+2.  Use the installer to install the prerequisites:
 
     ```bash
     sudo bash dcos_generate_config.sh --install-prereqs
@@ -395,7 +395,7 @@ After DC/OS is installed and deployed across your cluster, you can add more agen
     ```
 
  [2]: /docs/1.10/cli/install/
- [4]: /docs/1.10/installing/cli-installer/prerequisites/
+ [4]: /docs/1.10/installing/cli-installer/system-requirements/
  [5]: https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh
  [6]: /docs/1.10/installing/config/reference/
  [9]: /docs/1.10/installing/troubleshooting/
