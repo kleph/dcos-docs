@@ -34,7 +34,7 @@ The Spartan instance on each agent also acts as a DNS server for any service tha
 
 DC/OS offers three load balancing options out-of-the-box:
 [Minuteman](/docs/1.10/networking/load-balancing-vips/),
-[Edge-LB](https://docs.mesosphere.com/docs/1.10/networking/edge-lb/),
+[Edge-LB](https://docs.mesosphere.com/1.10/networking/edge-lb/),
 and [Marathon-LB](/docs/1.10/networking/marathon-lb/).
 
 
@@ -43,7 +43,7 @@ and [Marathon-LB](/docs/1.10/networking/marathon-lb/).
 | Open Source                        |     X     |         |      X      |
 | Enterprise                         |     X     |    X    |      X      |
 | North-South (External to Internal) |           |    X    |      X      |
-| East-West (Internal to Interal)    |     X     |    X    |      X      |
+| East-West (Internal to Internal)    |     X     |    X    |      X      |
 | Layer 4 (Transport Layer)          |     X     |    X    |      X      |
 | Layer 7 (Application Layer)        |           |    X    |      X      |
 | Marathon Services                  |     X     |    X    |      X      |
