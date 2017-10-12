@@ -21,6 +21,7 @@ The following services also offer CLI commands and an API to discover endpoints:
 # Returned endpoints
 
 Returned endpoints will include the following:
+
 - `.autoip.dcos.thisdcos.directory` hostnames for each instance that will follow them if they're moved within the DC/OS cluster.
 - A HA-enabled VIP hostname for accessing any of the instances (optional).
 - A direct IP address for accessing the service if `.autoip.dcos.thisdcos.directory` hostnames are not resolvable.
