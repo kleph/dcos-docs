@@ -1,10 +1,8 @@
 ---
 post_title: External Persistent Volumes
-menu_order: 1
+menu_order: 20
 feature_maturity: experimental
 ---
-
-**Warning:** Volume size is specified in GiB.
 
 Use external volumes when fault-tolerance is crucial for your app. If a host fails, the native Marathon instance reschedules your app on another host, along with its associated data, without user intervention. External volumes also typically offer a larger amount of storage.
 
