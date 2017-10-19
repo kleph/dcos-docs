@@ -1,6 +1,6 @@
 ---
 post_title: Edge-LB Configuration
-menu_order: 2
+menu_order: 30
 post_excerpt: ""
 feature_maturity: ""
 enterprise: 'yes'
@@ -622,4 +622,3 @@ Put them everywhere except after the last element in an object or array.
   "key": ["value1", "value2"]
 }
 ```
-

@@ -1,6 +1,6 @@
 ---
 post_title: Edge-LB Release Notes
-menu_order: 9
+menu_order: 70
 post_excerpt: ""
 feature_maturity: ""
 enterprise: 'yes'

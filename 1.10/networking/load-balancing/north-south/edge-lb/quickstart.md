@@ -1,6 +1,6 @@
 ---
 post_title: Edge-LB Quickstart
-menu_order: 1
+menu_order: 20
 post_excerpt: ""
 feature_maturity: ""
 enterprise: 'yes'
@@ -14,7 +14,7 @@ In this quickstart you will create an [Edge-LB pool](/1.10/networking/edge-lb/ar
 
 # Quickstart
 
-1.  Create a [pool](/1.10/networking/edge-lb/architecture#edge-lb-pool) configuration. There are more [examples here](/1.10/networking/edge-lb/examples), and more detailed [configuration documented here](/1.10/networking/edge-lb/configuration), but for this quickstart, you can use this configuration, named `sample-minimal.yaml`:
+1. Create a [pool](/1.10/networking/edge-lb/architecture#edge-lb-pool) configuration. Copy the following configuration into a file named `sample-minimal.yaml`.
 
     ```yaml
     ---
@@ -38,13 +38,15 @@ In this quickstart you will create an [Edge-LB pool](/1.10/networking/edge-lb/ar
                   port:
                     name: web
     ```
-1.  Upload the configuration to [Edge-LB](/1.10/networking/edge-lb/architecture#edge-lb). This will create a [pool](/1.10/networking/edge-lb/architecture#edge-lb-pool) with 1 [load balancer](/1.10/networking/edge-lb/architecture#edge-lb-load-balancer) instance that will run on the public agent nodes.
+   This is a minimal configuration. There are more complex configurations in the [Examples section](/1.10/networking/edge-lb/examples). All configuration options are documented in the [Configuration section](/1.10/networking/edge-lb/configuration).
+
+1. Upload the configuration to [Edge-LB](/1.10/networking/edge-lb/architecture#edge-lb). This will create a [pool](/1.10/networking/edge-lb/architecture#edge-lb-pool) with 1 [load balancer](/1.10/networking/edge-lb/architecture#edge-lb-load-balancer) instance that will run on the public agent nodes.
 
     ```bash
     dcos edgelb config sample-minimal.yaml
     ```
 
-1.  Create the service to load balance. We will call it `host-httpd.json`
+1.  Create the service to load balance. Copy the following into a file named `host-httpd.json`
 
     ```json
     {
@@ -134,7 +136,7 @@ In this quickstart you will create an [Edge-LB pool](/1.10/networking/edge-lb/ar
 
 # Next steps
 
-- For more Edge-LB configuration examples, see the [examples](/1.10/networking/edge-lb/examples).
+- For more Edge-LB configuration examples, see the [Examples section](/1.10/networking/edge-lb/examples).
 - For more information about configuring Edge-LB, see the [edgelb configuration](/1.10/networking/edge-lb/configuration).
 
 - Consult the [dcos edgelb command reference](/1.10/cli/command-reference/dcos-edgelb/).

@@ -1,6 +1,6 @@
 ---
 post_title: Edge-LB Architecture
-menu_order: 8
+menu_order: 60
 post_excerpt: ""
 feature_maturity: ""
 enterprise: 'yes'

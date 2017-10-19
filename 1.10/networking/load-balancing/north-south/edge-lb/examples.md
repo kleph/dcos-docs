@@ -1,6 +1,6 @@
 ---
 post_title: Edge-LB Examples
-menu_order: 6
+menu_order: 60
 post_excerpt: ""
 feature_maturity: ""
 enterprise: 'yes'

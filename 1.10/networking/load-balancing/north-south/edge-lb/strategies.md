@@ -1,6 +1,6 @@
 ---
 post_title: Edge-LB Service Deployment Strategies
-menu_order: 7
+menu_order: 40
 post_excerpt: ""
 feature_maturity: ""
 enterprise: 'yes'

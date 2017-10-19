@@ -1,17 +1,18 @@
 ---
 post_title: Configuring DC/OS Access for Edge-LB
-menu_order: 3
+menu_order: 10
 post_excerpt: ""
 feature_maturity: ""
 enterprise: 'yes'
 ---
 
-This topic describes how to configure DC/OS access for Edge-LB. Depending on your [security mode](/1.10/overview/security/security-modes/), Edge-LB requires [service authentication](/1.10/security/ent/service-auth/) for access to DC/OS.
+This topic describes how to configure DC/OS access for Edge-LB. Depending on your [security mode](/1.10/overview/security/security-modes/), Edge-LB may require [service authentication](/1.10/security/ent/service-auth/) for access to DC/OS.
 
 | Security mode | Service Account |
 |---------------|-----------------------|
 | Disabled      | Not available   |
 | Permissive    | Recommended (optional) |
+| Strict (not currenly supported) | Required   |
 
 **Prerequisites:**
 
@@ -36,7 +37,7 @@ dcos security org service-accounts keypair <private-key>.pem <public-key>.pem
 From a terminal prompt, create a new service account (`<service-account-id>`) containing the public key (`<your-public-key>.pem`).
 
 ```bash
-dcos security org service-accounts create -p <your-public-key>.pem -d "Edge-LB service account" <service-account-id>
+dcos security org service-accounts create -p <public-key>.pem -d "Edge-LB service account" <service-account-id>
 ```
 
 **Tip:** You can verify your new service account using the following command.
@@ -76,29 +77,10 @@ Use the following curl commands to rapidly provision the Edge-LB service account
     ## Permissive
 
     ```bash
-    curl -X PUT --cacert dcos-ca.crt \
-    -H 'Content-Type: application/json' \
-    -H "Authorization: token=$(dcos config show core.dcos_acs_token)" $(dcos config show core.dcos_url)/acs/api/v1/acls/dcos:service:marathon:marathon:services:%252F \
-    -d '{"description":"Allows access to any service launched by the native Marathon instance"}' \
-    curl -X PUT --cacert dcos-ca.crt \
-    -H 'Content-Type: application/json' \
-    -H "Authorization: token=$(dcos config show core.dcos_acs_token)" $(dcos config show core.dcos_url)/acs/api/v1/acls/dcos:service:marathon:marathon:admin:events \
-    -d '{"description":"Allows access to Marathon events"}'
+    dcos security org users grant service-account-id dcos:service:marathon:marathon:services create --description "Allows access to any service launched by the native Marathon instance"
+
+    dcos security org users grant service-account-id dcos:service:marathon:marathon:admin:events create --description "Allows access to Marathon events"
     ```
-
-    ## Permissive
-
-    ```bash
-    curl -X PUT --cacert dcos-ca.crt \
-    -H 'Content-Type: application/json' \
-    -H "Authorization: token=$(dcos config show core.dcos_acs_token)" $(dcos config show core.dcos_url)/acs/api/v1/acls/dcos:service:marathon:marathon:services:%252F \
-    -d '{"description":"Allows access to any service launched by the native Marathon instance"}' \
-    curl -X PUT --cacert dcos-ca.crt \
-    -H 'Content-Type: application/json' \
-    -H "Authorization: token=$(dcos config show core.dcos_acs_token)" $(dcos config show core.dcos_url)/acs/api/v1/acls/dcos:service:marathon:marathon:admin:events \
-    -d '{"description":"Allows access to Marathon events"}'
-    ```    
-
 
 1.  Grant the permissions and the allowed actions to the service account using the following commands.
 
@@ -106,10 +88,9 @@ Use the following curl commands to rapidly provision the Edge-LB service account
     Run these commands.
 
     ```bash
-    curl -X PUT --cacert dcos-ca.crt \
-    -H "Authorization: token=$(dcos config show core.dcos_acs_token)" $(dcos config show core.dcos_url)/acs/api/v1/acls/dcos:service:marathon:marathon:services:%252F/users/edgelb-principal/read
-    curl -X PUT --cacert dcos-ca.crt \
-    -H "Authorization: token=$(dcos config show core.dcos_acs_token)" $(dcos config show core.dcos_url)/acs/api/v1/acls/dcos:service:marathon:marathon:admin:events/users/edgelb-principal/read
+    dcos security org users grant service-account-id dcos:service:marathon:marathon:services:%252F/users/edgelb-principal read
+
+    dcos security org users grant service-account-id dcos:service:marathon:marathon:admin:events/users/edgelb-principal read
     ```
 
 For more information about the available Edge-LB commands, see the [Edge-LB command reference](/1.10/cli/command-reference/dcos-edgelb/).

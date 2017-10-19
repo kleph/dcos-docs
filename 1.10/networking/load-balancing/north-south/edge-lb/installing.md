@@ -1,6 +1,6 @@
 ---
 post_title: Installing Edge-LB
-menu_order: 4
+menu_order: 0
 post_excerpt: ""
 feature_maturity: ""
 enterprise: 'yes'
@@ -24,6 +24,7 @@ dcos package install edgelb
    |---------------|-----------------------|
    | Disabled      | Not available   |
    | Permissive    | Recommended (Optional)   |
+   | Strict (not currently supported)   | Required   |
 
 # Add Edge-LB package repositories
 Contact your sales representative or sales@mesosphere.io for access to this repository. Edge-LB is not available in the default Universe repository.

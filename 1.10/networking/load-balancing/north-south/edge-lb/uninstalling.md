@@ -1,13 +1,13 @@
 ---
 post_title: Uninstalling Edge-LB
-menu_order: 5
+menu_order: 50
 post_excerpt: ""
 feature_maturity: ""
 enterprise: 'yes'
 ---
 
-*Do not* use the UI or CLI (marathon) to create or destroy services managed by
-Edge LB. Operations *must performed exclusively through the Edge LB CLI*.
+*Do not* use the UI or CLI (Marathon) to create or destroy services managed by
+Edge-LB. Operations *must performed exclusively through the Edge-LB CLI*.
 
 1.  Delete each [pool](/1.10/networking/edge-lb/architecture#edge-lb-pool) (and each [load balancer](/1.10/networking/edge-lb/architecture#edge-lb-load-balancer) within it) with this command:
 
