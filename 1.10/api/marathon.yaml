@@ -3,7 +3,6 @@ swagger: "2.0"
 info:
   title: "Backup/Restore v1 API"
   version: "1.0.0"
-  description: "test"
 
 basePath: "/system/v1/backup/v1"
 
