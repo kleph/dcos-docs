@@ -33,7 +33,8 @@ This topic provides all available configuration parameters. Except where explici
 
 | Parameter                    | Description                                                                                                                                                       |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [dcos_overlay_enable](#dcos_overlay_enable)          | This block of parameters specifies whether to enable DC/OS virtual networks.                                                                                      | [dns_forward_zones](#dns_forward_zones)               | A nested list of DNS zones, IP addresses, and ports that configure custom forwarding behavior of DNS queries. A DNS zone is mapped to a set of DNS resolvers. |
+| [dcos_overlay_enable](#dcos_overlay_enable)          | This block of parameters specifies whether to enable DC/OS virtual networks.                                                              |
+| [dns_forward_zones](#dns_forward_zones)              | A nested list of DNS zones, IP addresses, and ports that configure custom forwarding behavior of DNS queries. A DNS zone is mapped to a set of DNS resolvers. |
 | [dns_search](#dns_search)                   | A space-separated list of domains that are tried when an unqualified domain is entered.                                                  |
 | [resolvers](#resolvers)                    | A YAML nested list (`-`) of DNS resolvers for your DC/OS cluster nodes.                                                |
 | [master_dns_bindall](#master_dns_bindall)                    | Indicates whether the master DNS port is open.                                               |
