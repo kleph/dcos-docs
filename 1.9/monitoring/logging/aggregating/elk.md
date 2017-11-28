@@ -107,7 +107,7 @@ For each master node in your DC/OS cluster:
     -u dcos-vault.service \
     -u dcos-logrotate-master.service \
     > /var/log/dcos/dcos.log 2>&1'
-    ExecStartPre=/usr/bin/journalctl --vacuum-size=10M
+    ExecStartPre=/usr/bin/journalctl
     
     [Install]
     WantedBy=multi-user.target
@@ -157,7 +157,7 @@ For each agent node in your DC/OS cluster:
     -u dcos-vol-discovery-priv-agent.service \
     -u dcos-logrotate-agent.service \
     > /var/log/dcos/dcos.log 2>&1'
-    ExecStartPre=/usr/bin/journalctl --vacuum-size=10M
+    ExecStartPre=/usr/bin/journalctl
     
     [Install]
     WantedBy=multi-user.target
