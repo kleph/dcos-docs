@@ -31,7 +31,7 @@ You will need to change the configurations for your DC/OS installation (if you a
 
 1. Change this line in your [dcos-config.yaml]( https://github.com/dcos/dcos/blob/a7a30779663081198649caecb4d27165836e73ae/gen/dcos-config.yaml#L431) to `MESOS_CGROUPS_ENABLE_CFS=false`.
 
-1. [Reinstall DC/OS](https://dcos.io/docs/1.10/installing/).
+1. [Reinstall DC/OS](https://dcos.io/docs/1.11/installing/).
 
 ### Reconfiguration method
 

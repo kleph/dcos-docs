@@ -41,11 +41,11 @@ Some notes of the template configuration is below,
 
 First, look up `MASTERFQDN` in the outputs of the deployment. To find that, click on the link under `Last deployment` (which is `4/15/2016 (Succeeded)` here) and you should see this:
 
-![Deployment history](/docs/1.10/img/dcos-azure-marketplace-step2a.png)
+![Deployment history](/docs/1.11/img/dcos-azure-marketplace-step2a.png)
 
 Click on the latest deployment and copy the value of `MASTERFQDN` in the `Outputs` section:
 
-![Deployment output](/docs/1.10/img/dcos-azure-marketplace-step2b.png)
+![Deployment output](/docs/1.11/img/dcos-azure-marketplace-step2b.png)
 
 Use the value of `MASTERFQDN` you found in the `Outputs` section in the previous step, and we will use it in the following step.
 
@@ -57,27 +57,27 @@ In order to visit the the DC/OS Dashboard, we will need to access the TCP port 8
 
 Find the network security group resource of the master node,
 
-![Resource - Master Node Network Security Group](/docs/1.10/img/dcos-azure-step2case1a.png)
+![Resource - Master Node Network Security Group](/docs/1.11/img/dcos-azure-step2case1a.png)
 
 Click on the "Inbound security rules" tab on the left side,
 
-![Inbound Security Rules](/docs/1.10/img/dcos-azure-step2case1b.png)
+![Inbound Security Rules](/docs/1.11/img/dcos-azure-step2case1b.png)
 
 Add an inbound security rule.
 
-![Add Inbound Security Rules](/docs/1.10/img/dcos-azure-step2case1c.png)
+![Add Inbound Security Rules](/docs/1.11/img/dcos-azure-step2case1c.png)
 
 Find the load balancer resource of the master node,
 
-![Resource - Master Node Load balancer](/docs/1.10/img/dcos-azure-step2case1d.png)
+![Resource - Master Node Load balancer](/docs/1.11/img/dcos-azure-step2case1d.png)
 
 Click on the "Inbound NAT rules" tab on the left side,
 
-![Inbound NAT Rules](/docs/1.10/img/dcos-azure-step2case1e.png)
+![Inbound NAT Rules](/docs/1.11/img/dcos-azure-step2case1e.png)
 
 Add an inbound NAT rule.
 
-![Add Inbound NAT Rules](/docs/1.10/img/dcos-azure-step2case1f.png)
+![Add Inbound NAT Rules](/docs/1.11/img/dcos-azure-step2case1f.png)
 
 Now you can visit `http://$MASTERFQDN` and view the DC/OS Dashboard.
 
@@ -99,7 +99,7 @@ ssh azureuser@dcosmaster.westus.cloudapp.azure.com -L 8000:localhost:80
 
 Now you can visit `http://localhost:8000` on your local machine and view the DC/OS Dashboard.
 
-![DC/OS dashboard](/docs/1.10/img/dcos-gui.png)
+![DC/OS dashboard](/docs/1.11/img/dcos-gui.png)
 
 #### Caveats
 
@@ -141,6 +141,6 @@ If you've created a new resource group in the deployment step, it is as easy as 
 - [Install the DC/OS Command-Line Interface (CLI)][2]
 - [Scaling considerations][4]
 
-[1]: /docs/1.10/security/user-management/
-[2]: /docs/1.10/cli/install/
+[1]: /docs/1.11/security/user-management/
+[2]: /docs/1.11/cli/install/
 [4]: https://azure.microsoft.com/en-us/documentation/articles/best-practices-auto-scaling/

@@ -9,7 +9,7 @@ Use this guide to get started with the DC/OS metrics component.
 
 **Prerequisites:** 
 
-- At least one [DC/OS service](/docs/1.10/deploying-services/creating-services/) is deployed.
+- At least one [DC/OS service](/docs/1.11/deploying-services/creating-services/) is deployed.
 - Optional: the CLI JSON processor [jq](https://github.com/stedolan/jq/wiki/Installation).
 
 The metrics component is natively integrated with DC/OS and no additional setup is required.  
@@ -34,7 +34,7 @@ The metrics component is natively integrated with DC/OS and no additional setup 
         dcos marathon app add test-metrics.json
         ```
         
-1.  [SSH to the agent node](/docs/1.10/administering-clusters/sshcluster/) that is running your app, where (`--mesos-id=<mesos-id>`) is the Mesos ID of the node running your app.
+1.  [SSH to the agent node](/docs/1.11/administering-clusters/sshcluster/) that is running your app, where (`--mesos-id=<mesos-id>`) is the Mesos ID of the node running your app.
 
     ```
     dcos node ssh --master-proxy --mesos-id=<mesos-id>

@@ -25,13 +25,13 @@ In this example, a disk resource is added to a DC/OS agent post-install on a run
     Note there are no references yet for `/dcos/volume0`.
 
 3.  Stop the agent.
-    - On a [private](/docs/1.10/overview/concepts/#private-agent-node) agent:
+    - On a [private](/docs/1.11/overview/concepts/#private-agent-node) agent:
     
       ```bash
       sudo systemctl stop dcos-mesos-slave.service
       ```
     
-    - On a [public](/docs/1.10/overview/concepts/#public-agent-node) agent:
+    - On a [public](/docs/1.11/overview/concepts/#public-agent-node) agent:
     
       ```bash
       sudo systemctl stop dcos-mesos-slave-public.service
@@ -171,7 +171,7 @@ In this example, a disk resource is added to a DC/OS agent post-install on a run
 
 After running this service, navigate to the service Volumes tab:
 
-![Mount disk](/docs/1.10/img/mount-disk.png)
+![Mount disk](/docs/1.11/img/mount-disk.png)
 
 # Cloud provider resources
 

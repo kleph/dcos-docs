@@ -91,4 +91,4 @@ The following is the boot sequence of a DC/OS scheduler service.
 
 ### More Information
 
-For more information about tasks and services, see [Distributed Process Management](/docs/1.10/overview/architecture/distributed-process-management/).
+For more information about tasks and services, see [Distributed Process Management](/docs/1.11/overview/architecture/distributed-process-management/).

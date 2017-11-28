@@ -6,11 +6,11 @@ menu_order: 3
 
 The Logging API exposes node, component, and container (task) logs.
 
-The Logging API is backed by the [DC/OS Log component](/docs/1.10/overview/architecture/components/#dcos-log), which runs on all nodes in the cluster.
+The Logging API is backed by the [DC/OS Log component](/docs/1.11/overview/architecture/components/#dcos-log), which runs on all nodes in the cluster.
 
-For more information about using the Logging API, see [Logging](/docs/1.10/monitoring/logging/).
+For more information about using the Logging API, see [Logging](/docs/1.11/monitoring/logging/).
 
-For usage examples, see [Logging API Examples](/docs/1.10/monitoring/logging/logging-api-examples/).
+For usage examples, see [Logging API Examples](/docs/1.11/monitoring/logging/logging-api-examples/).
 
 
 # Compatibility
@@ -33,7 +33,7 @@ Access to the Logging API of the agent nodes is also proxied through the master 
 /system/v1/agent/{agent_id}/logs/v1/
 ```
 
-To determine the address of your cluster, see [Cluster Access](/docs/1.10/api/access/).
+To determine the address of your cluster, see [Cluster Access](/docs/1.11/api/access/).
 
 
 # Format
@@ -51,7 +51,7 @@ The following resources are available under both of the above routes:
 
 <div class="swagger-section">
   <div id="message-bar" class="swagger-ui-wrap message-success" data-sw-translate=""></div>
-  <div id="swagger-ui-container" class="swagger-ui-wrap" data-api="/docs/1.10/api/logs.yaml">
+  <div id="swagger-ui-container" class="swagger-ui-wrap" data-api="/docs/1.11/api/logs.yaml">
 
   <div class="info" id="api_info">
     <div class="info_title">Loading docs...</div>

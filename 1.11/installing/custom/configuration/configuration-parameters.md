@@ -9,7 +9,7 @@ This topic provides all available configuration parameters. Except where explici
 
 | Parameter                              | Description                                                                                                                                               |
 |----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [agent_list](#agent_list)                                              | A YAML nested list (`-`) of IPv4 addresses to your [private agent](/docs/1.10/overview/concepts/#private-agent-node) host names. |
+| [agent_list](#agent_list)                                              | A YAML nested list (`-`) of IPv4 addresses to your [private agent](/docs/1.11/overview/concepts/#private-agent-node) host names. |
 | aws_template_storage_access_key_id         | The [access key ID](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) of the account owning the AWS S3 bucket. |
 | aws_template_storage_bucket                | The name of an S3 bucket to contain [customized advanced AWS templates](/1.10/installing/cloud/aws/advanced/#create-your-templates). |
 | aws_template_storage_bucket_path           | The path to a location within the S3 bucket to store template artifacts.
@@ -30,7 +30,7 @@ This topic provides all available configuration parameters. Except where explici
 | [master_discovery](#master_discovery)                                 | (Required) The Mesos master discovery method.         |
 | [mesos_container_log_sink](#mesos_container_log_sink)                 | The log manager for containers (tasks). |
 | [platform](#platform)                                                 | The infrastructure platform. |
-| [public_agent_list](#public_agent_list)                               | A YAML nested list (`-`) of IPv4 addresses to your [public agent](/docs/1.10/overview/concepts/#public-agent-node) host names.  |
+| [public_agent_list](#public_agent_list)                               | A YAML nested list (`-`) of IPv4 addresses to your [public agent](/docs/1.11/overview/concepts/#public-agent-node) host names.  |
 | [rexray_config](#rexray_config)                                       | The [REX-Ray](https://rexray.readthedocs.io/en/v0.9.0/user-guide/config/) configuration method for enabling external persistent volumes in Marathon. You cannot specify both `rexray_config` and `rexray_config_preset`.|
 | [rexray_config_preset](#rexray_config_preset) | If you run DC/OS on AWS setting this parameter to `aws`, sets the `rexray_config` parameter to a sensible default REX-Ray configuration that is bundled with DC/OS itself. You cannot specify both `rexray_config` and `rexray_config_preset`. |
 
@@ -82,7 +82,7 @@ This topic provides all available configuration parameters. Except where explici
 | [zk_agent_credentials](#zk-agent)           | (Enterprise DC/OS Only) The ZooKeeper agent credentials.  |
 
 ### agent_list
-A YAML nested list (`-`) of IPv4 addresses to your [private agent](/docs/1.10/overview/concepts/#private-agent-node) host names.
+A YAML nested list (`-`) of IPv4 addresses to your [private agent](/docs/1.11/overview/concepts/#private-agent-node) host names.
 
 ### auth_cookie_secure_flag (Enterprise DC/OS Only)
 
@@ -159,7 +159,7 @@ You can use the following options to further configure the Docker credentials:
             *  `cluster_docker_credentials_write_to_etc: 'false'` Do not write a credentials file.
     *  `cluster_docker_credentials_dcos_owned: 'false'` The credentials file is stored in `/etc/mesosphere/docker_credentials`.
 
-For more information, see the [examples](/docs/1.10/installing/custom/configuration/examples/#docker-credentials).
+For more information, see the [examples](/docs/1.11/installing/custom/configuration/examples/#docker-credentials).
 
 ### cluster_docker_credentials_enabled
 Whether to pass the Mesos `--docker_config` option containing [`cluster_docker_credentials`](#cluster_docker_credentials) to Mesos.
@@ -196,7 +196,7 @@ ab1c23de-45f6-7g8h-9012-i345j6k7lm8n
 For more information, see the [security documentation](https://docs.mesosphere.com/1.10/security/).
 
 ### custom_checks
-Custom installation checks that are added to the default check configuration process. The configuration is used by the [DC/OS Diagnostics component](/docs/1.10/overview/architecture/components/#dcos-diagnostics) to perform installation and upgrade checks. These custom checks are run alongside the default pre and post-flight checks during installation and upgrade.
+Custom installation checks that are added to the default check configuration process. The configuration is used by the [DC/OS Diagnostics component](/docs/1.11/overview/architecture/components/#dcos-diagnostics) to perform installation and upgrade checks. These custom checks are run alongside the default pre and post-flight checks during installation and upgrade.
 
 - `cluster_checks` - This group of parameters specifies the health checks across the DC/OS cluster.
 
@@ -212,7 +212,7 @@ Custom installation checks that are added to the default check configuration pro
     - `cmd` - Specify an array of health check command strings.
     - `timeout` - Specify how long to wait, in seconds, before assuming the check failed. A check that times out is assumed to have a status of `3 (UNKNOWN)`.
 
-For more information on how these custom checks are used, see the [examples](/docs/1.10/installing/custom/configuration/examples/#custom-checks) and [Node and Cluster Health Check](/docs/1.10/installing/custom/node-cluster-health-check/) documentation.
+For more information on how these custom checks are used, see the [examples](/docs/1.11/installing/custom/configuration/examples/#custom-checks) and [Node and Cluster Health Check](/docs/1.11/installing/custom/node-cluster-health-check/) documentation.
 
 ### dcos_audit_logging (Enterprise DC/OS Only)
 
@@ -227,7 +227,7 @@ For more information, see the [security documentation](https://docs.mesosphere.c
 
 Indicates whether to enable DC/OS virtual networks.
 
-**Important:** Virtual networks require Docker version 1.11 or later. If you are using Docker 1.10 or earlier, you must specify `dcos_overlay_enable: 'false'`. For more information, see the [system requirements](/docs/1.10/installing/custom/system-requirements/).
+**Important:** Virtual networks require Docker version 1.11 or later. If you are using Docker 1.10 or earlier, you must specify `dcos_overlay_enable: 'false'`. For more information, see the [system requirements](/docs/1.11/installing/custom/system-requirements/).
 
 *  `dcos_overlay_enable: 'false'` Do not enable the DC/OS virtual network.
 *  `dcos_overlay_enable: 'true'` Enable the DC/OS virtual network. This is the default value. After the virtual network is enabled, you can also specify the following parameters:
@@ -253,11 +253,11 @@ Indicates whether to enable DC/OS virtual networks.
         *  `vtep_subnet` A dedicated address space that is used for the VxLAN backend for the virtual network. This address space should not be routeable from outside the agents or master.
         *  `vtep_mac_oui` The MAC address of the interface connecting to the virtual network in the public node. **Important:** The last 3 bytes must be `00`.
         *  `overlays`
-            *  `name` The canonical name (see [limitations](/docs/1.10/networking/virtual-networks/) for constraints on naming virtual networks).
+            *  `name` The canonical name (see [limitations](/docs/1.11/networking/virtual-networks/) for constraints on naming virtual networks).
             *  `subnet` The subnet that is allocated to the virtual network.
             *  `prefix` The size of the subnet that is allocated to each agent and thus defines the number of agents on which the overlay can run. The size of the subnet is carved from the overlay subnet.
 
- For more information, see the [example](/docs/1.10/installing/custom/configuration/examples/#overlay) and [documentation](/docs/1.10/networking/virtual-networks/).
+ For more information, see the [example](/docs/1.11/installing/custom/configuration/examples/#overlay) and [documentation](/docs/1.11/networking/virtual-networks/).
 
 
 ### dns_bind_ip_blacklist
@@ -301,8 +301,8 @@ The amount of time to wait before removing stale Docker images stored on the age
 ### enable_docker_gc
 Indicates whether to run the [docker-gc](https://github.com/spotify/docker-gc#excluding-images-from-garbage-collection) script, a simple Docker container and image garbage collection script, once every hour to clean up stray Docker containers. You can configure the runtime behavior by using the `/etc/` config. For more information, see the [documentation](https://github.com/spotify/docker-gc#excluding-images-from-garbage-collection)
 
-*  `enable_docker_gc: 'true'` Run the docker-gc scripts once every hour. This is the default value for [cloud](/docs/1.10/installing/cloud/) template installations.
-*  `enable_docker_gc: 'false'` Do not run the docker-gc scripts once every hour. This is the default value for [custom](/docs/1.10/installing/custom/) installations.
+*  `enable_docker_gc: 'true'` Run the docker-gc scripts once every hour. This is the default value for [cloud](/docs/1.11/installing/cloud/) template installations.
+*  `enable_docker_gc: 'false'` Do not run the docker-gc scripts once every hour. This is the default value for [custom](/docs/1.11/installing/custom/) installations.
 
 ### exhibitor_storage_backend
 The type of storage backend to use for Exhibitor. You can use internal DC/OS storage (`static`) or specify an external storage system (`zookeeper`, `aws_s3`, and `azure`) for configuring and orchestrating ZooKeeper with Exhibitor on the master nodes. Exhibitor automatically configures your ZooKeeper installation on the master nodes during your DC/OS installation.
@@ -353,13 +353,13 @@ Indicates whether to enable GPU support in DC/OS.
 *  `enable_gpu_isolation: 'true'` Any GPUs that are installed in DC/OS will be automatically discovered and available as consumable resources for DC/OS tasks. This is the default value.
 *  `enable_gpu_isolation: 'false'` GPUs are not available for use in the cluster.
 
-For more information, see the [GPU documentation](/docs/1.10/deploying-services/gpu/).
+For more information, see the [GPU documentation](/docs/1.11/deploying-services/gpu/).
 
 ### gc_delay
 The maximum amount of time to wait before cleaning up the executor directories. It is recommended that you accept the default value of 2 days.
 
 ### gpus_are_scarce
-Indicates whether to treat [GPUs](/docs/1.10/deploying-services/gpu/) as a scarce resource in the cluster.
+Indicates whether to treat [GPUs](/docs/1.11/deploying-services/gpu/) as a scarce resource in the cluster.
 
 *  `gpus_are_scarce: 'true'` Treat GPUs as a scarce resource. This reserves the GPUs exclusively for services that opt-in to consume GPUs via the [Mesos `GPU_RESOURCES` framework capability](http://mesos.apache.org/documentation/latest/gpu-support/). This is the default value.
 *  `gpus_are_scarce: 'false'` Treat GPUs like any other resource. GPUs will be offered indiscriminately to all frameworks, regardless of whether they use the [Mesos `GPU_RESOURCES` framework capability](http://mesos.apache.org/documentation/latest/gpu-support/) or not.
@@ -446,7 +446,7 @@ The allowable amount of time, in seconds, for an action to begin after the proce
 **Tip:** For a slower network, consider changing to `process_timeout: 600`.
 
 ### public_agent_list
-A YAML nested list (`-`) of IPv4 addresses to your [public agent](/docs/1.10/overview/concepts/#public-agent-node) host names.
+A YAML nested list (`-`) of IPv4 addresses to your [public agent](/docs/1.11/overview/concepts/#public-agent-node) host names.
 
 ### resolvers
 A YAML nested list (`-`) of DNS resolvers for your DC/OS cluster nodes. You can specify a maximum of 3 resolvers. Set this parameter to the most authoritative nameservers that you have.
@@ -459,7 +459,7 @@ A YAML nested list (`-`) of DNS resolvers for your DC/OS cluster nodes. You can 
     - 8.8.4.4
     - 8.8.8.8
     ```
--  If you do not have a DNS infrastructure and do not have access to internet DNS servers, you can specify `resolvers: []`. By specifying this setting, all requests to non-`.mesos` will return an error. For more information, see the Mesos-DNS [documentation](/docs/1.10/networking/mesos-dns/).
+-  If you do not have a DNS infrastructure and do not have access to internet DNS servers, you can specify `resolvers: []`. By specifying this setting, all requests to non-`.mesos` will return an error. For more information, see the Mesos-DNS [documentation](/docs/1.11/networking/mesos-dns/).
 
 **Caution:** If you set the `resolvers` parameter incorrectly, you will permanently damage your configuration and have to reinstall DC/OS.
 
@@ -480,7 +480,7 @@ The <a href="https://rexray.readthedocs.io/en/v0.9.0/user-guide/config/" target=
             tasks:
               logTimeout: 5m
 
-See the external persistent volumes [documentation](/docs/1.10/storage/external-storage/) for information on how to create your configuration.
+See the external persistent volumes [documentation](/docs/1.11/storage/external-storage/) for information on how to create your configuration.
 
 If the `rexray_config` parameter is provided, its contents are used verbatim for REX-Ray's configuration. This lets you define completely custom REX-Ray configurations which integrate with various [external storage providers]( https://rexray.readthedocs.io/en/v0.9.0/user-guide/storage-providers/). However, if you upgrade your cluster to a version that includes an updated version of REX-Ray, you must ensure that your `rexray_config` parameter is compatible with the newer version of REX-Ray.
 
@@ -525,8 +525,8 @@ If you’ve already installed your cluster and would like to disable this in-pla
 
 Indicates whether to enable the DC/OS proxy.
 
-*  `use_proxy: 'false'` Do not configure DC/OS [components](/docs/1.10/overview/architecture/components/) to use a custom proxy. This is the default value.
-*  `use_proxy: 'true'` Configure DC/OS [components](/docs/1.10/overview/architecture/components/) to use a custom proxy. If you specify `use_proxy: 'true'`, you can also specify these parameters:
+*  `use_proxy: 'false'` Do not configure DC/OS [components](/docs/1.11/overview/architecture/components/) to use a custom proxy. This is the default value.
+*  `use_proxy: 'true'` Configure DC/OS [components](/docs/1.11/overview/architecture/components/) to use a custom proxy. If you specify `use_proxy: 'true'`, you can also specify these parameters:
     **Important:** The specified proxies must be resolvable from the provided list of [resolvers](#resolvers).
     *  `http_proxy: http://<user>:<pass>@<proxy_host>:<http_proxy_port>` The HTTP proxy.
     *  `https_proxy: https://<user>:<pass>@<proxy_host>:<https_proxy_port>` The HTTPS proxy.
@@ -534,7 +534,7 @@ Indicates whether to enable the DC/OS proxy.
 
         **Important:** Wildcard characters (`*`) are not supported.
 
-For more information, see the [examples](/docs/1.10/installing/custom/configuration/examples/#http-proxy).
+For more information, see the [examples](/docs/1.11/installing/custom/configuration/examples/#http-proxy).
 
 **Important:** You should also configure an HTTP proxy for [Docker](https://docs.docker.com/engine/admin/systemd/#/http-proxy).
 

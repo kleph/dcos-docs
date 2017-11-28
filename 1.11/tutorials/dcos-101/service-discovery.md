@@ -9,8 +9,8 @@ Welcome to part 4 of the DC/OS 101 Tutorial
 <table class="table" bgcolor="#FAFAFA"> <tr> <td align=justify style="border-left: thin solid; border-top: thin solid; border-bottom: thin solid;border-right: thin solid;">**Important:** Mesosphere does not support this tutorial, associated scripts, or commands, which are provided without warranty of any kind. The purpose of this tutorial is purely to demonstrate capabilities, and it may not be suited for use in a production environment. Before using a similar solution in your environment, you should adapt, validate, and test.</td> </tr> </table>
 
 # Prerequisites
-* A [running DC/OS cluster](/docs/1.10/tutorials/dcos-101/cli/) with [the DC/OS CLI installed](/docs/1.10/tutorials/dcos-101/cli/).
-* [app1](/docs/1.10/tutorials/dcos-101/app1/) deployed and running in your cluster.
+* A [running DC/OS cluster](/docs/1.11/tutorials/dcos-101/cli/) with [the DC/OS CLI installed](/docs/1.11/tutorials/dcos-101/cli/).
+* [app1](/docs/1.11/tutorials/dcos-101/app1/) deployed and running in your cluster.
 
 # Objective
 Your [app](https://raw.githubusercontent.com/joerg84/dcos-101/master/app1/app1.py) in the previous part of this tutorial used `redis.marathon.l4lb.thisdcos.directory` as the address for connecting to Redis, with port 6379. As Redis might be running on any agent in the cluster, and potentially on different ports, how does this address resolve to the actual running Redis instance?
@@ -18,7 +18,7 @@ Your [app](https://raw.githubusercontent.com/joerg84/dcos-101/master/app1/app1.p
 In this section, you will learn about DC/OS service discovery by exploring the different options available for apps in DC/OS.
 
 # Service Discovery
-  [Service discovery](/docs/1.10/networking/) enables addressing of applications independently of where they are running in the cluster, which is particularly useful in cases where applications may fail and be restarted on a different host.
+  [Service discovery](/docs/1.11/networking/) enables addressing of applications independently of where they are running in the cluster, which is particularly useful in cases where applications may fail and be restarted on a different host.
 
   DC/OS provides two options for service discovery: 
 
@@ -32,9 +32,9 @@ SSH into the Mesos master node in your cluster to see how these different servic
 
 # Mesos-DNS
   
-  [Mesos-DNS](/docs/1.10/networking/mesos-dns/) assigns DNS entries for every task. The naming pattern for these entries is  *task.scheduler.mesos*
+  [Mesos-DNS](/docs/1.11/networking/mesos-dns/) assigns DNS entries for every task. The naming pattern for these entries is  *task.scheduler.mesos*
   
-  The default scheduler for jobs is [Marathon](https://dcos.io/docs/1.10/overview/architecture/components/#marathon), so the Mesos-DNS name for your Redis service is *redis.marathon.mesos*.
+  The default scheduler for jobs is [Marathon](https://dcos.io/docs/1.11/overview/architecture/components/#marathon), so the Mesos-DNS name for your Redis service is *redis.marathon.mesos*.
   
   Let's use the [dig](https://linux.die.net/man/1/dig) command to retrieve the address record (also called the A record). Dig is a command line utility to query DNS servers. When used without argument, it will use the system-wide configured DNS servers to query against, which in a DC/OS cluster is configured to point at Mesos-DNS: 
 
@@ -69,7 +69,7 @@ SSH into the Mesos master node in your cluster to see how these different servic
 
 # Named Virtual IPs
   
-  * [Named VIPs](/docs/1.10/networking/load-balancing-vips/) allow you to assign name/port pairs to your apps, which means you can give your apps meaningful names with a predictable port. They also provide built-in load balancing when using multiple instances of an application. 
+  * [Named VIPs](/docs/1.11/networking/load-balancing-vips/) allow you to assign name/port pairs to your apps, which means you can give your apps meaningful names with a predictable port. They also provide built-in load balancing when using multiple instances of an application. 
   For example, you can assign a named VIP to your Redis service by adding the following to the package definition:
 
   ```

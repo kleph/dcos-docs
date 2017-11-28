@@ -5,7 +5,7 @@ post_excerpt: ""
 feature_maturity: ""
 ---
 
-[DC/OS components](/docs/1.10/overview/architecture/components/) listen on multiple ports on each node. These ports must be available for installation to succeed.
+[DC/OS components](/docs/1.11/overview/architecture/components/) listen on multiple ports on each node. These ports must be available for installation to succeed.
 
 DC/OS allocates additional ports to services running on top of DC/OS. These ports are required to be available when services are installed.
 
