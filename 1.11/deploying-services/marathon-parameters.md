@@ -76,7 +76,7 @@ The container information.
         - **size** The size (in GiB) of the external persistent volume. 
     - **hostPath** The host path.
     - **mode** The access mode of the volume, either read-write (`RW`) or read-only (`RO`). 
-    - **persistent** A local persistent volume. See [Local Persistent Volumes](/1.10/storage/persistent-volume/).
+    - **persistent** A local persistent volume. See [Local Persistent Volumes](/1.11/storage/persistent-volume/).
         - **size** The size (in MiB) of the local persistent volume. 
     
 ### cpus

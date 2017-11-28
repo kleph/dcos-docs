@@ -11,7 +11,7 @@ This topic provides all available configuration parameters. Except where explici
 |----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [agent_list](#agent_list)                                              | A YAML nested list (`-`) of IPv4 addresses to your [private agent](/docs/1.11/overview/concepts/#private-agent-node) host names. |
 | aws_template_storage_access_key_id         | The [access key ID](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) of the account owning the AWS S3 bucket. |
-| aws_template_storage_bucket                | The name of an S3 bucket to contain [customized advanced AWS templates](/1.10/installing/cloud/aws/advanced/#create-your-templates). |
+| aws_template_storage_bucket                | The name of an S3 bucket to contain [customized advanced AWS templates](/1.11/installing/cloud/aws/advanced/#create-your-templates). |
 | aws_template_storage_bucket_path           | The path to a location within the S3 bucket to store template artifacts.
 | aws_template_storage_region_name           | The region containing the S3 bucket.  |
 | aws_template_storage_secret_access_key     | The [secret access key](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) of the account owning the AWS S3 bucket. |
@@ -106,7 +106,7 @@ This parameter sets the auth token time-to-live (TTL) for Identity and Access Ma
 bouncer_expiration_auth_token_days: '0.5'
 ```
 
-For more information, see the [security documentation](https://docs.mesosphere.com/1.10/security/).
+For more information, see the [security documentation](https://docs.mesosphere.com/1.11/security/).
 
 ### ca_certificate_path (Enterprise DC/OS Only)
 
@@ -193,7 +193,7 @@ Customer keys look like this:
 ab1c23de-45f6-7g8h-9012-i345j6k7lm8n
 ```
 
-For more information, see the [security documentation](https://docs.mesosphere.com/1.10/security/).
+For more information, see the [security documentation](https://docs.mesosphere.com/1.11/security/).
 
 ### custom_checks
 Custom installation checks that are added to the default check configuration process. The configuration is used by the [DC/OS Diagnostics component](/docs/1.11/overview/architecture/components/#dcos-diagnostics) to perform installation and upgrade checks. These custom checks are run alongside the default pre and post-flight checks during installation and upgrade.
@@ -221,7 +221,7 @@ Indicates whether security decisions (authentication, authorization) are logged 
 * `'dcos_audit_logging': 'true'` Mesos, Marathon, and Jobs are logged. This is the default value.
 * `'dcos_audit_logging': 'false'` Mesos, Marathon, and Jobs are not logged.
 
-For more information, see the [security documentation](https://docs.mesosphere.com/1.10/security/).
+For more information, see the [security documentation](https://docs.mesosphere.com/1.11/security/).
 
 ### dcos_overlay_enable
 
@@ -389,7 +389,7 @@ The path to the installer host logs from the SSH processes. By default this is s
 *   `master_discovery: master_http_loadbalancer` The set of masters has an HTTP load balancer in front of them. The agent nodes will know the address of the load balancer. They use the load balancer to access Exhibitor on the masters to get the full list of master IPs. If you specify `master_http_load_balancer`, you must also specify these parameters:
 
     *  `exhibitor_address`
-       (Required) The address (preferably an IP address) of the load balancer in front of the masters. If you need to replace your masters, this address becomes the static address that agents can use to find the new master. For Enterprise DC/OS, this address is included in [DC/OS certificates](https://docs.mesosphere.com/1.10/networking/tls-ssl/).
+       (Required) The address (preferably an IP address) of the load balancer in front of the masters. If you need to replace your masters, this address becomes the static address that agents can use to find the new master. For Enterprise DC/OS, this address is included in [DC/OS certificates](https://docs.mesosphere.com/1.11/networking/tls-ssl/).
 
        The load balancer must accept traffic on ports 80, 443, 2181, 5050, 8080, 8181. The traffic must also be forwarded to the same ports on the master. For example, Mesos port 5050 on the load balancer should forward to port 5050 on the master. The master should forward any new connections via round robin, and should avoid machines that do not respond to requests on Mesos port 5050 to ensure the master is up.
     *  `num_masters`
@@ -415,7 +415,7 @@ The log manager for containers (tasks). The options are:
 * `'logrotate'` - send task logs only to the file system (i.e. a stdout/err file).
 * `'journald+logrotate'` - Send logs to both journald and the file system.
 
-The default is `logrotate`. Due to performance issues, `journald` is not recommended. For details, see [Logging API](/1.10/monitoring/logging/logging-api/#compatibility).
+The default is `logrotate`. Due to performance issues, `journald` is not recommended. For details, see [Logging API](/1.11/monitoring/logging/logging-api/#compatibility).
 
 ### mesos_dns_set_truncate_bit
 
@@ -496,7 +496,7 @@ Use this parameter to specify a security mode other than `security: permissive` 
 - `security: permissive`
 - `security: strict`
 
-Refer to the [security modes](https://docs.mesosphere.com/1.10/security/#security-modes) section for a detailed discussion of each parameter.
+Refer to the [security modes](https://docs.mesosphere.com/1.11/security/#security-modes) section for a detailed discussion of each parameter.
 
 ### ssh_key_path
 The path that the installer uses to log into the target nodes. By default this is set to `/genconf/ssh_key`. This parameter should not be changed because `/genconf` is local to the container that is running the installer, and is a mounted volume.
@@ -508,10 +508,10 @@ The port to SSH to, for example `22`.
 The SSH username, for example `centos`.
 
 ### superuser_password_hash (Enterprise DC/OS Only)
-(Required) The hashed superuser password. The `superuser_password_hash` is generated by using the installer `--hash-password` flag. For more information, see the [security documentation](https://docs.mesosphere.com/1.10/security/).
+(Required) The hashed superuser password. The `superuser_password_hash` is generated by using the installer `--hash-password` flag. For more information, see the [security documentation](https://docs.mesosphere.com/1.11/security/).
 
 ### superuser_username (Enterprise DC/OS Only)
-(Required) The user name of the superuser. For more information, see the [security documentation](https://docs.mesosphere.com/1.10/security/).
+(Required) The user name of the superuser. For more information, see the [security documentation](https://docs.mesosphere.com/1.11/security/).
 
 ### telemetry_enabled
 Indicates whether to enable sharing of anonymous data for your cluster. <!-- DC/OS auth -->

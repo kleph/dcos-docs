@@ -123,7 +123,7 @@ sudo journalctl -u dcos-spartan
 sudo systemctl | grep dcos
 ```
 
-If your upgrade fails because of a [custom node or cluster check](/1.10/administering-clusters/backup-and-restore/), run these commands for more details:
+If your upgrade fails because of a [custom node or cluster check](/1.11/administering-clusters/backup-and-restore/), run these commands for more details:
 
 ```bash
 dcos-diagnostics check node-poststart
