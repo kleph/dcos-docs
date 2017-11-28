@@ -26,8 +26,8 @@ cluster_docker_credentials:
     '<path-to-credentials>':
       auth: <username>
       email: <email>
-cluster_docker_credentials_dcos_owned: <true|false>
-  cluster_docker_credentials_write_to_etc: <true|false>
+  cluster_docker_credentials_dcos_owned: <true|false>
+    cluster_docker_credentials_write_to_etc: <true|false>
 cluster_docker_credentials_enabled: <true|false>
 cluster_docker_registry_url: <url>
 cluster_name: '<cluster-name>'
@@ -35,6 +35,9 @@ cosmos_config:
 staged_package_storage_uri: <temp-path-to-files>
 package_storage_uri: <permanent-path-to-files>
 # Enterprise DC/OS Only
+ca_certificate: <path-to-certificate>
+ca_certificate_key: <path-to-private-key>
+ca_certificate_chain: <path-to-certificate-chain>
 customer_key: <customer-key>
 custom_checks:
   cluster_checks:
@@ -132,7 +135,12 @@ https_proxy: https://<proxy_host>:<https_proxy_port>
 no_proxy:
 - '<blocked.address1.com>'
 - '<blocked.address2.com>'
+# Enterprise DC/OS Only
+zk_super_credentials: 'super:<long, random string>'
+zk_master_credentials: 'dcos-master:<long, random string>'
+zk_agent_credentials: 'dcos-agent:<long, random string>'
 ```
+
 
 # <a name="examples1"></a>Example Configurations
 
