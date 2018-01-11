@@ -90,7 +90,7 @@ The following instructions demonstrate how to use Docker with OverlayFS on CentO
 1.  Install the Docker engine, daemon, and service.
 
     ```bash
-    sudo yum install -y docker-engine-1.13.1 docker-engine-selinux-1.13.1
+    sudo yum install -y docker-engine-17.05.0.ce-1 docker-engine-selinux-17.05.0.ce-1
     sudo systemctl start docker
     sudo systemctl enable docker
     ```
