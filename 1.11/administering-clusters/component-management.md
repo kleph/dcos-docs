@@ -26,6 +26,9 @@ Component health is monitored by the DC/OS Diagnostics component. For more infor
 
 Component logs are sent to journald and exposed by the DC/OS Log component. For more infromation about component logs, see [Logging](/docs/1.11/monitoring/logging/).
 
+## Component cleanup
+A script to remove unused components from a previous version using pkgpanda API :
+https://gist.github.com/kleph/1e7e1a7717da6ac7d9cd74de5d859ad3
 
 ## Routes
 
